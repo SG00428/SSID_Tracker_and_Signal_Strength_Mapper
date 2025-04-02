@@ -14,7 +14,162 @@
 <body>
     <h2>Click on the Map to Get WiFi SSIDs & Signal Strength</h2>
     <div id="map"></div>
-    <div id="wifi-info"></div>
+    <div id="wifi-info"></div><!DOCTYPE html>
+    <html>
+    <head>
+        <title>WiFi Signal Mapping</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+        <style>
+            #map {
+                height: 80vh;
+                width: 100%;
+            }
+            #wifi-corner {
+                position: fixed;
+                top: 10px;
+                right: 10px;
+                background-color: white;
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                max-height: 300px;
+                overflow-y: auto;
+                z-index: 1000;
+            }
+            .wifi-list {
+                margin-top: 10px;
+            }
+            h3 {
+                margin-top: 0;
+                margin-bottom: 10px;
+            }
+            .signal-strong {
+                color: green;
+            }
+            .signal-medium {
+                color: orange;
+            }
+            .signal-weak {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>WiFi Signal Mapping</h1>
+        <div id="map"></div>
+        <div id="wifi-corner">
+            <h3>Tracked SSIDs</h3>
+            <div id="tracked-ssids">Loading...</div>
+        </div>
+    
+        <script>
+            // Initialize the map
+            var map = L.map('map').setView([0, 0], 13);
+            
+            // Add OpenStreetMap tiles
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+            
+            // Try to get the user's location
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var lat = position.coords.latitude;
+                    var lng = position.coords.longitude;
+                    map.setView([lat, lng], 18);
+                });
+            }
+            
+            // Object to store markers
+            var markers = {};
+            
+            // Function to update the tracked SSIDs list
+            function updateTrackedSSIDs() {
+                fetch('/get_all_wifi')
+                    .then(response => response.json())
+                    .then(data => {
+                        const ssidList = document.getElementById('tracked-ssids');
+                        console.log("Retrieved SSIDs:", data.all_ssids);
+                        if (data.all_ssids.length === 0) {
+                            ssidList.innerHTML = '<p>No SSIDs tracked yet</p>';
+                        } else {
+                            ssidList.innerHTML = '<ul>' + 
+                                data.all_ssids.map(ssid => `<li>${ssid}</li>`).join('') + 
+                                '</ul>';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching tracked SSIDs:', error);
+                    });
+            }
+            
+            // Function to get CSS class based on signal strength
+            function getSignalClass(signalDbm) {
+                if (signalDbm > -60) return 'signal-strong';
+                if (signalDbm > -75) return 'signal-medium';
+                return 'signal-weak';
+            }
+            
+            // Call initially and set interval
+            updateTrackedSSIDs();
+            setInterval(updateTrackedSSIDs, 10000); // Update every 10 seconds
+            
+            // Click event on map
+            map.on('click', function(e) {
+                var lat = e.latlng.lat;
+                var lng = e.latlng.lng;
+                
+                // Send coordinates to server and get WiFi data
+                fetch('/get_wifi', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ lat: lat, lon: lng }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log("Received WiFi data:", data.wifi);
+                    
+                    // Create popup content showing all SSIDs
+                    var popupContent = '<div class="wifi-list"><h4>WiFi Networks</h4>';
+                    
+                    if (!data.wifi || data.wifi.length === 0) {
+                        popupContent += '<p>No WiFi networks found</p>';
+                    } else {
+                        popupContent += '<ul>';
+                        data.wifi.forEach(function(network) {
+                            var signalClass = getSignalClass(network.signal);
+                            popupContent += `<li>${network.ssid}: <span class="${signalClass}">${network.signal} dBm</span></li>`;
+                        });
+                        popupContent += '</ul>';
+                    }
+                    popupContent += '</div>';
+                    
+                    // Create or update marker
+                    var locationKey = `${lat},${lng}`;
+                    if (markers[locationKey]) {
+                        markers[locationKey].setPopupContent(popupContent);
+                        markers[locationKey].openPopup();
+                    } else {
+                        var marker = L.marker([lat, lng]).addTo(map);
+                        marker.bindPopup(popupContent).openPopup();
+                        markers[locationKey] = marker;
+                    }
+                    
+                    // Update the tracked SSIDs corner display
+                    updateTrackedSSIDs();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            });
+        </script>
+    </body>
+    </html>
+    
 
     <script>
         var map = L.map('map').setView([23.2100, 72.6845], 16);
