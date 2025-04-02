@@ -5,8 +5,10 @@ import re
 
 app = Flask(__name__)
 
-# Function to get WiFi SSIDs and signal strength
+# Store WiFi data by location
+wifi_locations = {}
 
+# Function to get WiFi SSIDs and signal strength
 def get_wifi_networks():
     wifi_data = []
     os_type = platform.system()
@@ -14,17 +16,28 @@ def get_wifi_networks():
     if os_type == "Windows":
         try:
             output = subprocess.check_output("netsh wlan show networks mode=bssid", shell=True).decode()
-            networks = re.split(r"\n\n", output)  # Splitting networks by blank lines
-            for network in networks:
-                ssid_match = re.search(r"SSID \d+ : (.+)", network)
-                signal_match = re.findall(r"Signal\s*:\s*(\d+)%", network)
-
-                if ssid_match and signal_match:
-                    ssid = ssid_match.group(1)
-                    signal_percent = int(signal_match[0])  # Get first BSSID's signal
-                    signal_dbm = (signal_percent / 2) - 100  # Approximate dBm conversion
+            
+            # Split by SSID sections instead of blank lines
+            ssid_sections = re.split(r"SSID \d+ : ", output)[1:]  # Skip the first empty element
+            
+            for section in ssid_sections:
+                lines = section.strip().split('\n')
+                if lines:
+                    ssid = lines[0].strip()  # The SSID name is the first line
                     
-                    wifi_data.append({"ssid": ssid, "signal": int(signal_dbm)})
+                    # Find all BSSIDs and their signal strengths in this section
+                    bssid_signal_matches = re.findall(r"BSSID \d+.*?Signal\s*:\s*(\d+)%", section, re.DOTALL)
+                    
+                    if bssid_signal_matches:
+                        # Use the strongest signal if there are multiple BSSIDs
+                        strongest_signal = max(int(signal) for signal in bssid_signal_matches)
+                        signal_dbm = (strongest_signal / 2) - 100  # Approximate dBm conversion
+                        
+                        # Add this network to our list
+                        wifi_data.append({"ssid": ssid, "signal": int(signal_dbm)})
+            
+            # Debug output to see what networks we're finding
+            print(f"Found {len(wifi_data)} networks: {[n['ssid'] for n in wifi_data]}")
 
         except Exception as e:
             print("Error fetching WiFi data:", e)
@@ -53,7 +66,25 @@ def get_wifi():
     
     wifi_networks = get_wifi_networks()
     
-    return jsonify({"latitude": latitude, "longitude": longitude, "wifi": wifi_networks})
+    # Store WiFi data for this location
+    location_key = f"{latitude:.6f},{longitude:.6f}"
+    wifi_locations[location_key] = wifi_networks
+    
+    return jsonify({
+        "latitude": latitude, 
+        "longitude": longitude, 
+        "wifi": wifi_networks
+    })
+
+@app.route('/get_all_wifi', methods=['GET'])
+def get_all_wifi():
+    # Return all stored WiFi networks
+    all_ssids = set()
+    for location_data in wifi_locations.values():
+        for network in location_data:
+            all_ssids.add(network['ssid'])
+            
+    return jsonify({"all_ssids": list(all_ssids)})
 
 if __name__ == '__main__':
     app.run(debug=True)
