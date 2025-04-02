@@ -15,6 +15,17 @@ def get_wifi_networks():
 
     if os_type == "Windows":
         try:
+            # Forces a rescan of available networks before fetching data
+            try:
+                subprocess.check_output("netsh wlan disconnect", shell=True)
+                subprocess.check_output("netsh wlan connect", shell=True)
+                # Brief pause to allow for reconnection
+                import time
+                time.sleep(1)
+            except:
+                # Continue even if disconnect/reconnect fails
+                pass
+                
             output = subprocess.check_output("netsh wlan show networks mode=bssid", shell=True).decode()
             
             # Split by SSID sections instead of blank lines

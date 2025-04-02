@@ -8,185 +8,79 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
-        #map { height: 600px; width: 100%; }
+        #map {
+            height: 80vh;
+            width: 100%;
+        }
+        #wifi-corner {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+        .wifi-list {
+            margin-top: 10px;
+        }
+        h1, h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .signal-strong {
+            color: green;
+        }
+        .signal-medium {
+            color: orange;
+        }
+        .signal-weak {
+            color: red;
+        }
     </style>
 </head>
 <body>
-    <h2>Click on the Map to Get WiFi SSIDs & Signal Strength</h2>
+    <h1>WiFi Signal Mapping</h1>
     <div id="map"></div>
-    <div id="wifi-info"></div><!DOCTYPE html>
-    <html>
-    <head>
-        <title>WiFi Signal Mapping</title>
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-        <style>
-            #map {
-                height: 80vh;
-                width: 100%;
-            }
-            #wifi-corner {
-                position: fixed;
-                top: 10px;
-                right: 10px;
-                background-color: white;
-                padding: 10px;
-                border-radius: 5px;
-                border: 1px solid #ccc;
-                max-height: 300px;
-                overflow-y: auto;
-                z-index: 1000;
-            }
-            .wifi-list {
-                margin-top: 10px;
-            }
-            h3 {
-                margin-top: 0;
-                margin-bottom: 10px;
-            }
-            .signal-strong {
-                color: green;
-            }
-            .signal-medium {
-                color: orange;
-            }
-            .signal-weak {
-                color: red;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>WiFi Signal Mapping</h1>
-        <div id="map"></div>
-        <div id="wifi-corner">
-            <h3>Tracked SSIDs</h3>
-            <div id="tracked-ssids">Loading...</div>
-        </div>
-    
-        <script>
-            // Initialize the map
-            var map = L.map('map').setView([0, 0], 13);
-            
-            // Add OpenStreetMap tiles
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                attribution: '© OpenStreetMap contributors'
-            }).addTo(map);
-            
-            // Try to get the user's location
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(function(position) {
-                    var lat = position.coords.latitude;
-                    var lng = position.coords.longitude;
-                    map.setView([lat, lng], 18);
-                });
-            }
-            
-            // Object to store markers
-            var markers = {};
-            
-            // Function to update the tracked SSIDs list
-            function updateTrackedSSIDs() {
-                fetch('/get_all_wifi')
-                    .then(response => response.json())
-                    .then(data => {
-                        const ssidList = document.getElementById('tracked-ssids');
-                        console.log("Retrieved SSIDs:", data.all_ssids);
-                        if (data.all_ssids.length === 0) {
-                            ssidList.innerHTML = '<p>No SSIDs tracked yet</p>';
-                        } else {
-                            ssidList.innerHTML = '<ul>' + 
-                                data.all_ssids.map(ssid => `<li>${ssid}</li>`).join('') + 
-                                '</ul>';
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error fetching tracked SSIDs:', error);
-                    });
-            }
-            
-            // Function to get CSS class based on signal strength
-            function getSignalClass(signalDbm) {
-                if (signalDbm > -60) return 'signal-strong';
-                if (signalDbm > -75) return 'signal-medium';
-                return 'signal-weak';
-            }
-            
-            // Call initially and set interval
-            updateTrackedSSIDs();
-            setInterval(updateTrackedSSIDs, 10000); // Update every 10 seconds
-            
-            // Click event on map
-            map.on('click', function(e) {
-                var lat = e.latlng.lat;
-                var lng = e.latlng.lng;
-                
-                // Send coordinates to server and get WiFi data
-                fetch('/get_wifi', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ lat: lat, lon: lng }),
-                })
-                .then(response => response.json())
-                .then(data => {
-                    console.log("Received WiFi data:", data.wifi);
-                    
-                    // Create popup content showing all SSIDs
-                    var popupContent = '<div class="wifi-list"><h4>WiFi Networks</h4>';
-                    
-                    if (!data.wifi || data.wifi.length === 0) {
-                        popupContent += '<p>No WiFi networks found</p>';
-                    } else {
-                        popupContent += '<ul>';
-                        data.wifi.forEach(function(network) {
-                            var signalClass = getSignalClass(network.signal);
-                            popupContent += `<li>${network.ssid}: <span class="${signalClass}">${network.signal} dBm</span></li>`;
-                        });
-                        popupContent += '</ul>';
-                    }
-                    popupContent += '</div>';
-                    
-                    // Create or update marker
-                    var locationKey = `${lat},${lng}`;
-                    if (markers[locationKey]) {
-                        markers[locationKey].setPopupContent(popupContent);
-                        markers[locationKey].openPopup();
-                    } else {
-                        var marker = L.marker([lat, lng]).addTo(map);
-                        marker.bindPopup(popupContent).openPopup();
-                        markers[locationKey] = marker;
-                    }
-                    
-                    // Update the tracked SSIDs corner display
-                    updateTrackedSSIDs();
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
-            });
-        </script>
-    </body>
-    </html>
-    
+    <div class="controls">
+        <button id="refresh-scan" style="margin: 10px 0; padding: 8px 16px;">Refresh WiFi Scan</button>
+        <span id="scan-status"></span>
+    </div>
+    <div id="wifi-corner">
+        <h3>Tracked SSIDs</h3>
+        <div id="tracked-ssids">Loading...</div>
+    </div>
 
     <script>
+        // Initialize the map
         var map = L.map('map').setView([23.2100, 72.6845], 16);
-
+        
+        // Add OpenStreetMap tiles
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
             attribution: '© OpenStreetMap contributors'
         }).addTo(map);
-
-        var hostelBoundary = [
-            [23.21144, 72.683386],
-            [23.211205, 72.685907],
-            [23.208763, 72.685926],
-            [23.209519, 72.683377]
+        
+        // IIT Gandhinagar campus boundary coordinates
+        var campusBoundary = [
+            [23.215405, 72.681315],
+            [23.216841, 72.689125],
+            [23.205183, 72.691174],
+            [23.202838, 72.683541]
         ];
 
-        var polygon = L.polygon(hostelBoundary, {color: 'blue'}).addTo(map);
-
+        // Draw campus boundary polygon
+        var polygon = L.polygon(campusBoundary, {color: 'blue', fillOpacity: 0.2}).addTo(map);
+        
+        // Fit map to show the entire campus boundary
+        map.fitBounds(polygon.getBounds());
+        
+        // Variable to store the current marker
+        var currentMarker = null;
+        
         // Function to check if a point is inside the polygon
         function isPointInPolygon(point, polygon) {
             var x = point[0], y = point[1];
@@ -201,31 +95,120 @@
             }
             return inside;
         }
-
-        map.on('click', function(e) {
-            var lat = e.latlng.lat;
-            var lon = e.latlng.lng;
-            var point = [lat, lon];
-
-            if (!isPointInPolygon(point, hostelBoundary)) {
-                alert("Selected location is outside the hostel boundary.");
-                return;
+        
+        // Function to update the tracked SSIDs list
+        function updateTrackedSSIDs() {
+            fetch('/get_all_wifi')
+                .then(response => response.json())
+                .then(data => {
+                    const ssidList = document.getElementById('tracked-ssids');
+                    console.log("Retrieved SSIDs:", data.all_ssids);
+                    if (data.all_ssids.length === 0) {
+                        ssidList.innerHTML = '<p>No SSIDs tracked yet</p>';
+                    } else {
+                        ssidList.innerHTML = '<ul>' + 
+                            data.all_ssids.map(ssid => `<li>${ssid}</li>`).join('') + 
+                            '</ul>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching tracked SSIDs:', error);
+                });
+        }
+        
+        // Function to get CSS class based on signal strength
+        function getSignalClass(signalDbm) {
+            if (signalDbm > -60) return 'signal-strong';
+            if (signalDbm > -75) return 'signal-medium';
+            return 'signal-weak';
+        }
+        
+        // Call initially and set interval
+        updateTrackedSSIDs();
+        setInterval(updateTrackedSSIDs, 10000); // Update every 10 seconds
+        
+        // Function to perform a manual WiFi scan
+        function performWiFiScan(lat, lng) {
+            document.getElementById('scan-status').textContent = 'Scanning...';
+            
+            // Remove previous marker if exists
+            if (currentMarker) {
+                map.removeLayer(currentMarker);
             }
-
+            
             fetch('/get_wifi', {
                 method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({lat: lat, lon: lon})
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ lat: lat, lon: lng }),
             })
             .then(response => response.json())
             .then(data => {
-                var content = `<b>WiFi Data at (${data.latitude}, ${data.longitude})</b><br>`;
-                data.wifi.forEach(net => {
-                    content += `SSID: ${net.ssid}, Signal: ${net.signal} dBm<br>`;
-                });
-                L.popup().setLatLng([lat, lon]).setContent(content).openOn(map);
-                $("#wifi-info").html(content);
+                console.log("Received WiFi data:", data.wifi);
+                document.getElementById('scan-status').textContent = 'Scan complete!';
+                
+                // Create popup content showing all SSIDs
+                var popupContent = '<div class="wifi-list"><h4>WiFi Networks</h4>';
+                
+                if (!data.wifi || data.wifi.length === 0) {
+                    popupContent += '<p>No WiFi networks found</p>';
+                } else {
+                    popupContent += '<ul>';
+                    data.wifi.forEach(function(network) {
+                        var signalClass = getSignalClass(network.signal);
+                        popupContent += `<li>${network.ssid}: <span class="${signalClass}">${network.signal} dBm</span></li>`;
+                    });
+                    popupContent += '</ul>';
+                }
+                popupContent += '</div>';
+                
+                // Create new marker
+                currentMarker = L.marker([lat, lng]).addTo(map);
+                currentMarker.bindPopup(popupContent).openPopup();
+                
+                // Update the tracked SSIDs corner display
+                updateTrackedSSIDs();
+                
+                // Clear status after 3 seconds
+                setTimeout(function() {
+                    document.getElementById('scan-status').textContent = '';
+                }, 3000);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('scan-status').textContent = 'Scan failed!';
             });
+        }
+
+        // Add click handler for refresh button
+        document.getElementById('refresh-scan').addEventListener('click', function() {
+            if (currentMarker) {
+                // Get current marker position
+                const position = currentMarker.getLatLng();
+                performWiFiScan(position.lat, position.lng);
+            } else {
+                document.getElementById('scan-status').textContent = 'Place a marker first by clicking on the map';
+                setTimeout(function() {
+                    document.getElementById('scan-status').textContent = '';
+                }, 3000);
+            }
+        });
+
+        // Modify the map click handler to use the new performWiFiScan function
+        map.on('click', function(e) {
+            var lat = e.latlng.lat;
+            var lng = e.latlng.lng;
+            var point = [lat, lng];
+
+            // Check if the clicked point is within the campus boundary
+            if (!isPointInPolygon(point, campusBoundary)) {
+                alert("Selected location is outside the IIT Gandhinagar campus boundary.");
+                return;
+            }
+            
+            // Use the common function for WiFi scanning
+            performWiFiScan(lat, lng);
         });
     </script>
 </body>
