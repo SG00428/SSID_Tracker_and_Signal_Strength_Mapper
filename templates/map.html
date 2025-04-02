@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiFi Signal Mapper</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #map { height: 600px; width: 100%; }
+    </style>
+</head>
+<body>
+    <h2>Click on the Map to Get WiFi SSIDs & Signal Strength</h2>
+    <div id="map"></div>
+    <div id="wifi-info"></div>
+
+    <script>
+        var map = L.map('map').setView([23.2100, 72.6845], 16);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        var hostelBoundary = [
+            [23.21144, 72.683386],
+            [23.211205, 72.685907],
+            [23.208763, 72.685926],
+            [23.209519, 72.683377]
+        ];
+
+        var polygon = L.polygon(hostelBoundary, {color: 'blue'}).addTo(map);
+
+        // Function to check if a point is inside the polygon
+        function isPointInPolygon(point, polygon) {
+            var x = point[0], y = point[1];
+            var inside = false;
+            for (var i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
+                var xi = polygon[i][0], yi = polygon[i][1];
+                var xj = polygon[j][0], yj = polygon[j][1];
+
+                var intersect = ((yi > y) !== (yj > y)) &&
+                    (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
+                if (intersect) inside = !inside;
+            }
+            return inside;
+        }
+
+        map.on('click', function(e) {
+            var lat = e.latlng.lat;
+            var lon = e.latlng.lng;
+            var point = [lat, lon];
+
+            if (!isPointInPolygon(point, hostelBoundary)) {
+                alert("Selected location is outside the hostel boundary.");
+                return;
+            }
+
+            fetch('/get_wifi', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({lat: lat, lon: lon})
+            })
+            .then(response => response.json())
+            .then(data => {
+                var content = `<b>WiFi Data at (${data.latitude}, ${data.longitude})</b><br>`;
+                data.wifi.forEach(net => {
+                    content += `SSID: ${net.ssid}, Signal: ${net.signal} dBm<br>`;
+                });
+                L.popup().setLatLng([lat, lon]).setContent(content).openOn(map);
+                $("#wifi-info").html(content);
+            });
+        });
+    </script>
+</body>
+</html>
