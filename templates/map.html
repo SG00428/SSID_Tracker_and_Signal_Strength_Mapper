@@ -377,6 +377,13 @@
             return '';
         }
         
+        // Function to get CSS class for SNR value
+        function getSnrClass(snr) {
+            if (snr >= 40) return 'signal-strong';
+            if (snr >= 25) return 'signal-medium';
+            return 'signal-weak';
+        }
+        
         // Call initially and set interval
         updateTrackedSSIDs();
         setInterval(updateTrackedSSIDs, 30000); // Update every 30 seconds
@@ -428,12 +435,15 @@
                         filteredNetworks.map(network => {
                             const signalClass = getSignalClass(network.signal);
                             const authClass = getAuthClass(network.auth);
+                            const snrClass = getSnrClass(network.snr);
+                            
                             return `<div class="network-item" data-ssid="${network.ssid}" data-signal="${network.signal}">
                                 <strong>${network.ssid}</strong>: <span class="${signalClass}">${network.signal} dBm</span>
                                 <div class="network-info">
                                     Signal Quality: ${network.signal_percent}%
-                                    <br>Channel: ${network.channel || 'Unknown'}
-                                    <br>Authentication: <span class="${authClass}">${network.auth || 'Unknown'}</span>
+                                    <br>SNR: <span class="${snrClass}">${network.snr} dB</span>
+                                    <br>Ch: ${network.channel || 'Unknown'} | 
+                                    Auth: <span class="${authClass}">${network.auth || 'Unknown'}</span>
                                     ${network.samples ? `<br>Samples: ${network.samples}` : ''}
                                     ${network.signal_variance ? `<br>Variance: ±${network.signal_variance} dB` : ''}
                                 </div>
@@ -463,7 +473,11 @@
                     popupContent += `<p>Found ${filteredNetworks.length} networks</p>`;
                     if (filteredNetworks.length > 0) {
                         const topNetwork = filteredNetworks[0]; // Strongest signal
-                        popupContent += `<p>Strongest: <strong>${topNetwork.ssid}</strong> (${topNetwork.signal} dBm)</p>`;
+                        const snrClass = getSnrClass(topNetwork.snr);
+                        popupContent += `<p>
+                            Strongest: <strong>${topNetwork.ssid}</strong> 
+                            (${topNetwork.signal} dBm, SNR: <span class="${snrClass}">${topNetwork.snr} dB</span>)
+                        </p>`;
                     }
                 }
                 popupContent += '</div>';

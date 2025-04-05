@@ -32,6 +32,9 @@ def get_wifi_networks(samples=1, delay=0.2):
 def get_single_wifi_scan():
     wifi_data = []
     os_type = platform.system()
+    
+    # Try to get noise floor (varies by system)
+    noise_floor = -95  # Default noise floor estimation in dBm
 
     if os_type == "Windows":
         try:
@@ -40,6 +43,14 @@ def get_single_wifi_scan():
             
             # Get detailed info about all networks
             output = subprocess.check_output("netsh wlan show networks mode=bssid", shell=True).decode()
+            
+            # Try to get adapter info for noise floor (might not be available)
+            try:
+                adapter_info = subprocess.check_output("netsh wlan show interfaces", shell=True).decode()
+                # If available, we might find noise floor or use RSSI to estimate it
+                # Windows doesn't directly expose noise floor
+            except:
+                pass
             
             # Parse the output to extract SSIDs and signal strength
             ssid_blocks = re.split(r"SSID \d+ : ", output)[1:]  
@@ -65,6 +76,9 @@ def get_single_wifi_scan():
                     # Simple conversion formula: 100% = -50dBm, 0% = -100dBm
                     signal_dbm = int((signal_percent / 2) - 100)
                     
+                    # Calculate SNR (Signal-to-Noise Ratio)
+                    snr = signal_dbm - noise_floor
+                    
                     # Get authentication type
                     auth_type = auth_match.group(1) if auth_match else "Unknown"
                     
@@ -77,7 +91,9 @@ def get_single_wifi_scan():
                         "signal": signal_dbm,
                         "signal_percent": signal_percent,
                         "auth": auth_type,
-                        "channel": channel
+                        "channel": channel,
+                        "noise_floor": noise_floor,
+                        "snr": snr
                     })
             
             print(f"Found {len(wifi_data)} networks in scan")
@@ -102,6 +118,15 @@ def get_single_wifi_scan():
                     continue
             
             if wifi_interface:
+                # Try to get noise floor from iw survey
+                try:
+                    survey_output = subprocess.check_output(["iw", "dev", wifi_interface, "survey", "dump"], stderr=subprocess.DEVNULL).decode()
+                    noise_match = re.search(r"noise:\s*(-\d+)", survey_output)
+                    if noise_match:
+                        noise_floor = int(noise_match.group(1))
+                except:
+                    pass
+                
                 output = subprocess.check_output(["sudo", "iwlist", wifi_interface, "scan"]).decode()
                 network_sections = re.split(r"Cell \d+ - ", output)[1:]
                 
@@ -117,6 +142,9 @@ def get_single_wifi_scan():
                     if ssid_match and signal_match:
                         ssid = ssid_match.group(1)
                         signal_dbm = int(signal_match.group(1))
+                        
+                        # Calculate SNR
+                        snr = signal_dbm - noise_floor
                         
                         # Get channel
                         channel = int(channel_match.group(1)) if channel_match else 0
@@ -140,7 +168,9 @@ def get_single_wifi_scan():
                             "signal": signal_dbm,
                             "signal_percent": signal_percent,
                             "auth": auth_type,
-                            "channel": channel
+                            "channel": channel,
+                            "noise_floor": noise_floor,
+                            "snr": snr
                         })
         except Exception as e:
             print(f"Error fetching WiFi data on Linux: {str(e)}")
@@ -170,7 +200,9 @@ def aggregate_wifi_samples(samples):
     for ssid, networks in networks_by_ssid.items():
         # Average signal strength
         signal_values = [n["signal"] for n in networks]
+        snr_values = [n["snr"] for n in networks]
         avg_signal = int(statistics.mean(signal_values))
+        avg_snr = int(statistics.mean(snr_values))
         
         # Get other fields from the strongest sample
         strongest = max(networks, key=lambda n: n["signal"])
@@ -181,7 +213,9 @@ def aggregate_wifi_samples(samples):
             "signal": avg_signal,
             "signal_percent": strongest.get("signal_percent", 0),
             "auth": strongest.get("auth", "Unknown"),
-            "channel": strongest.get("channel", 0)
+            "channel": strongest.get("channel", 0),
+            "noise_floor": strongest.get("noise_floor", -95),
+            "snr": avg_snr
         })
     
     # Sort by signal strength
