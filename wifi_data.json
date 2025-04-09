@@ -1,0 +1,5156 @@
+{
+  "locations": {
+    "H_hostel_entrance_2025-04-09T22:51:05.143805": {
+      "name": "H_hostel_entrance",
+      "latitude": 23.20993867100029,
+      "longitude": 72.68369603428854,
+      "timestamp": "2025-04-09T22:51:05.143805",
+      "networks": [
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -91,
+          "signal_percent": 42,
+          "auth": "WPA2-Enterprise",
+          "channel": 48,
+          "noise_floor": -95,
+          "snr": 4,
+          "samples": 3,
+          "signal_variance": 10
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Enterprise",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "Open",
+          "channel": 161,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Personal",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "H_hostel_lobby1_2025-04-09T22:52:59.163118": {
+      "name": "H_hostel_lobby1",
+      "latitude": 23.20998219737238,
+      "longitude": 72.68367787365122,
+      "timestamp": "2025-04-09T22:52:59.163118",
+      "networks": [
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Enterprise",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -98,
+          "signal_percent": 3,
+          "auth": "Open",
+          "channel": 161,
+          "noise_floor": -95,
+          "snr": -3,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -98,
+          "signal_percent": 3,
+          "auth": "WPA2-Enterprise",
+          "channel": 161,
+          "noise_floor": -95,
+          "snr": -3,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -98,
+          "signal_percent": 3,
+          "auth": "WPA2-Personal",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": -3,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "H_hostel_lobby2_2025-04-09T22:54:07.615635": {
+      "name": "H_hostel_lobby2",
+      "latitude": 23.20997086131379,
+      "longitude": 72.68369791937612,
+      "timestamp": "2025-04-09T22:54:07.615635",
+      "networks": [
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -79,
+          "signal_percent": 57,
+          "auth": "WPA2-Enterprise",
+          "channel": 161,
+          "noise_floor": -95,
+          "snr": 15,
+          "samples": 3,
+          "signal_variance": 15
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -88,
+          "signal_percent": 24,
+          "auth": "WPA2-Personal",
+          "channel": 64,
+          "noise_floor": -95,
+          "snr": 7,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -92,
+          "signal_percent": 15,
+          "auth": "WPA2-Enterprise",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 3,
+          "samples": 3
+        },
+        {
+          "ssid": "CPPLUS-03AE",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Personal",
+          "channel": 8,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -98,
+          "signal_percent": 3,
+          "auth": "Open",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": -3,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "H_hostel_lobby3_2025-04-09T22:55:16.559370": {
+      "name": "H_hostel_lobby3",
+      "latitude": 23.20989673514351,
+      "longitude": 72.68362510463822,
+      "timestamp": "2025-04-09T22:55:16.559370",
+      "networks": [
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -85,
+          "signal_percent": 78,
+          "auth": "WPA2-Enterprise",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 10,
+          "samples": 3,
+          "signal_variance": 20
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Enterprise",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "Open",
+          "channel": 48,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -98,
+          "signal_percent": 3,
+          "auth": "WPA2-Personal",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": -3,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "G_Hostel_Entrance_2025-04-09T22:57:54.780343": {
+      "name": "G_Hostel_Entrance",
+      "latitude": 23.210424,
+      "longitude": 72.683449,
+      "timestamp": "2025-04-09T22:57:54.780343",
+      "networks": [
+        {
+          "ssid": "Network type            : Infrastructure",
+          "signal": -89,
+          "signal_percent": 21,
+          "auth": "Open",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 6,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Enterprise",
+          "channel": 56,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Personal",
+          "channel": 56,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -97,
+          "signal_percent": 6,
+          "auth": "WPA2-Enterprise",
+          "channel": 161,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -98,
+          "signal_percent": 3,
+          "auth": "Open",
+          "channel": 161,
+          "noise_floor": -95,
+          "snr": -3,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "G_hostel_lobby1_2025-04-09T22:58:55.896777": {
+      "name": "G_hostel_lobby1",
+      "latitude": 23.210455,
+      "longitude": 72.683388,
+      "timestamp": "2025-04-09T22:58:55.896777",
+      "networks": [
+        {
+          "ssid": "eduroam",
+          "signal": -94,
+          "signal_percent": 12,
+          "auth": "WPA2-Enterprise",
+          "channel": 48,
+          "noise_floor": -95,
+          "snr": 1,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -95,
+          "signal_percent": 9,
+          "auth": "Open",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 0,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Enterprise",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Personal",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "G_hostel_lobby2_2025-04-09T23:00:13.899914": {
+      "name": "G_hostel_lobby2",
+      "latitude": 23.21046566645104,
+      "longitude": 72.683370789098,
+      "timestamp": "2025-04-09T23:00:13.899914",
+      "networks": [
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -79,
+          "signal_percent": 57,
+          "auth": "WPA2-Enterprise",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 15,
+          "samples": 3,
+          "signal_variance": 15
+        },
+        {
+          "ssid": "ISTF-Dev",
+          "signal": -86,
+          "signal_percent": 27,
+          "auth": "Open",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 9,
+          "samples": 3
+        },
+        {
+          "ssid": "Network type            : Infrastructure",
+          "signal": -88,
+          "signal_percent": 24,
+          "auth": "Open",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 7,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "Open",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -98,
+          "signal_percent": 3,
+          "auth": "WPA2-Enterprise",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": -3,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -98,
+          "signal_percent": 3,
+          "auth": "WPA2-Personal",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": -3,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "old_mess_entrance_2025-04-09T23:01:56.602276": {
+      "name": "old_mess_entrance",
+      "latitude": 23.21073060068509,
+      "longitude": 72.68351121016241,
+      "timestamp": "2025-04-09T23:01:56.602276",
+      "networks": [
+        {
+          "ssid": "Network type            : Infrastructure",
+          "signal": -89,
+          "signal_percent": 21,
+          "auth": "Open",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 6,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -92,
+          "signal_percent": 15,
+          "auth": "WPA2-Personal",
+          "channel": 40,
+          "noise_floor": -95,
+          "snr": 3,
+          "samples": 3
+        },
+        {
+          "ssid": "ISTF-Dev",
+          "signal": -92,
+          "signal_percent": 15,
+          "auth": "Open",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 3,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -94,
+          "signal_percent": 12,
+          "auth": "WPA2-Enterprise",
+          "channel": 40,
+          "noise_floor": -95,
+          "snr": 1,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -94,
+          "signal_percent": 12,
+          "auth": "Open",
+          "channel": 40,
+          "noise_floor": -95,
+          "snr": 1,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -94,
+          "signal_percent": 12,
+          "auth": "WPA2-Enterprise",
+          "channel": 40,
+          "noise_floor": -95,
+          "snr": 1,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "old_mess_backside_2025-04-09T23:04:09.365042": {
+      "name": "old_mess_backside",
+      "latitude": 23.211301920265303,
+      "longitude": 72.68364548656413,
+      "timestamp": "2025-04-09T23:04:09.365042",
+      "networks": [
+        {
+          "ssid": "Mukesh's A52",
+          "signal": -79,
+          "signal_percent": 42,
+          "auth": "WPA2-Personal",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 16,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -92,
+          "signal_percent": 15,
+          "auth": "Open",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 3,
+          "samples": 3
+        },
+        {
+          "ssid": "Galaxy A31BF68",
+          "signal": -97,
+          "signal_percent": 6,
+          "auth": "WPA2-Personal",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -97,
+          "signal_percent": 6,
+          "auth": "WPA2-Enterprise",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "JioAirfiberA6",
+          "signal": -97,
+          "signal_percent": 6,
+          "auth": "WPA2-Personal",
+          "channel": 40,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -98,
+          "signal_percent": 3,
+          "auth": "WPA2-Personal",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": -3,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "basketball_court1_2025-04-09T23:06:18.270636": {
+      "name": "basketball_court1",
+      "latitude": 23.21148867000664,
+      "longitude": 72.6838425704978,
+      "timestamp": "2025-04-09T23:06:18.270636",
+      "networks": [
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -69,
+          "signal_percent": 63,
+          "auth": "WPA2-Enterprise",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 25,
+          "samples": 3,
+          "signal_variance": 2
+        },
+        {
+          "ssid": "JioAirfiberA6",
+          "signal": -86,
+          "signal_percent": 27,
+          "auth": "WPA2-Personal",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 9,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -91,
+          "signal_percent": 18,
+          "auth": "WPA2-Personal",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 4,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "Open",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Enterprise",
+          "channel": 52,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "Sugarcane_shop_2025-04-09T23:09:32.737864": {
+      "name": "Sugarcane_shop",
+      "latitude": 23.2112620893851,
+      "longitude": 72.68426472034068,
+      "timestamp": "2025-04-09T23:09:32.737864",
+      "networks": [
+        {
+          "ssid": "Galaxy M02ea73",
+          "signal": -61,
+          "signal_percent": 78,
+          "auth": "WPA2-Personal",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 34,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -78,
+          "signal_percent": 63,
+          "auth": "WPA2-Enterprise",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 17,
+          "samples": 3,
+          "signal_variance": 17
+        },
+        {
+          "ssid": "iPhone",
+          "signal": -85,
+          "signal_percent": 30,
+          "auth": "WPA2-Personal",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 10,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Enterprise",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "Open",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Personal",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "JioAirfiberA6",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Personal",
+          "channel": 40,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "E_hostel_entrnace_2025-04-09T23:13:34.342084": {
+      "name": "E_hostel_entrnace",
+      "latitude": 23.211243702199145,
+      "longitude": 72.68491384178375,
+      "timestamp": "2025-04-09T23:13:34.342084",
+      "networks": [
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -79,
+          "signal_percent": 60,
+          "auth": "Open",
+          "channel": 52,
+          "noise_floor": -95,
+          "snr": 15,
+          "samples": 3,
+          "signal_variance": 15
+        },
+        {
+          "ssid": "JioFi_108EEAF",
+          "signal": -94,
+          "signal_percent": 12,
+          "auth": "WPA2-Personal",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 1,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Enterprise",
+          "channel": 161,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -97,
+          "signal_percent": 6,
+          "auth": "WPA2-Enterprise",
+          "channel": 64,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "E_hostel_lobby1_2025-04-09T23:15:28.248661": {
+      "name": "E_hostel_lobby1",
+      "latitude": 23.210505,
+      "longitude": 72.685188,
+      "timestamp": "2025-04-09T23:15:28.248661",
+      "networks": [
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -87,
+          "signal_percent": 69,
+          "auth": "WPA2-Enterprise",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": 8,
+          "samples": 3,
+          "signal_variance": 19
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -97,
+          "signal_percent": 6,
+          "auth": "WPA2-Enterprise",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -97,
+          "signal_percent": 6,
+          "auth": "WPA2-Personal",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -98,
+          "signal_percent": 3,
+          "auth": "Open",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": -3,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "E_hostel_lobby2_2025-04-09T23:16:28.997539": {
+      "name": "E_hostel_lobby2",
+      "latitude": 23.210486500000002,
+      "longitude": 72.685181,
+      "timestamp": "2025-04-09T23:16:28.997539",
+      "networks": [
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -83,
+          "signal_percent": 33,
+          "auth": "WPA2-Personal",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 12,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -95,
+          "signal_percent": 9,
+          "auth": "WPA2-Enterprise",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 0,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -95,
+          "signal_percent": 9,
+          "auth": "WPA2-Enterprise",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": 0,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -98,
+          "signal_percent": 3,
+          "auth": "Open",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": -3,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "E_hostel_lobby3_2025-04-09T23:19:16.647196": {
+      "name": "E_hostel_lobby3",
+      "latitude": 23.21061995233992,
+      "longitude": 72.68512989414026,
+      "timestamp": "2025-04-09T23:19:16.647196",
+      "networks": [
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -79,
+          "signal_percent": 42,
+          "auth": "Open",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 16,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -86,
+          "signal_percent": 27,
+          "auth": "WPA2-Enterprise",
+          "channel": 52,
+          "noise_floor": -95,
+          "snr": 9,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -92,
+          "signal_percent": 15,
+          "auth": "WPA2-Enterprise",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 3,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Personal",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "B_hostel_entrance_2025-04-09T23:22:34.694695": {
+      "name": "B_hostel_entrance",
+      "latitude": 23.210908749999998,
+      "longitude": 72.684637,
+      "timestamp": "2025-04-09T23:22:34.694695",
+      "networks": [
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -72,
+          "signal_percent": 81,
+          "auth": "WPA2-Enterprise",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": 23,
+          "samples": 3,
+          "signal_variance": 21
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -97,
+          "signal_percent": 6,
+          "auth": "WPA2-Enterprise",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -97,
+          "signal_percent": 6,
+          "auth": "Open",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "B_hostel_lobby1_2025-04-09T23:24:17.562436": {
+      "name": "B_hostel_lobby1",
+      "latitude": 23.210791337787473,
+      "longitude": 72.68489215048815,
+      "timestamp": "2025-04-09T23:24:17.562436",
+      "networks": [
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -82,
+          "signal_percent": 72,
+          "auth": "WPA2-Enterprise",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 12,
+          "samples": 3,
+          "signal_variance": 16
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -91,
+          "signal_percent": 18,
+          "auth": "Open",
+          "channel": 48,
+          "noise_floor": -95,
+          "snr": 4,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -92,
+          "signal_percent": 15,
+          "auth": "WPA2-Enterprise",
+          "channel": 48,
+          "noise_floor": -95,
+          "snr": 3,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "B_hostel_lobby2_2025-04-09T23:25:41.607163": {
+      "name": "B_hostel_lobby2",
+      "latitude": 23.211246565265025,
+      "longitude": 72.68425394074973,
+      "timestamp": "2025-04-09T23:25:41.607163",
+      "networks": [
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -79,
+          "signal_percent": 42,
+          "auth": "WPA2-Personal",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 16,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -88,
+          "signal_percent": 24,
+          "auth": "WPA2-Enterprise",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 7,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -91,
+          "signal_percent": 18,
+          "auth": "WPA2-Enterprise",
+          "channel": 52,
+          "noise_floor": -95,
+          "snr": 4,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -92,
+          "signal_percent": 15,
+          "auth": "Open",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 3,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "mini_library_2025-04-09T23:27:40.201039": {
+      "name": "mini_library",
+      "latitude": 23.211246565265025,
+      "longitude": 72.68425394074973,
+      "timestamp": "2025-04-09T23:27:40.201039",
+      "networks": [
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -95,
+          "signal_percent": 9,
+          "auth": "WPA2-Personal",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 0,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Enterprise",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "Open",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -98,
+          "signal_percent": 3,
+          "auth": "WPA2-Enterprise",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": -3,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "student_lounge_2025-04-09T23:28:39.902180": {
+      "name": "student_lounge",
+      "latitude": 23.210982,
+      "longitude": 72.684476,
+      "timestamp": "2025-04-09T23:28:39.902180",
+      "networks": [
+        {
+          "ssid": "eduroam",
+          "signal": -77,
+          "signal_percent": 45,
+          "auth": "WPA2-Enterprise",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 18,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -77,
+          "signal_percent": 45,
+          "auth": "WPA2-Enterprise",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 18,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -86,
+          "signal_percent": 27,
+          "auth": "Open",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 9,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "old_pc_2025-04-09T23:30:18.426439": {
+      "name": "old_pc",
+      "latitude": 23.210774553344326,
+      "longitude": 72.68442649277006,
+      "timestamp": "2025-04-09T23:30:18.426439",
+      "networks": [
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -86,
+          "signal_percent": 69,
+          "auth": "WPA2-Enterprise",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": 8,
+          "samples": 3,
+          "signal_variance": 18
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Enterprise",
+          "channel": 161,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "Open",
+          "channel": 161,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "Sakshi",
+          "signal": -98,
+          "signal_percent": 3,
+          "auth": "WPA2-Personal",
+          "channel": 7,
+          "noise_floor": -95,
+          "snr": -3,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "F_hostel_entrance_2025-04-09T23:32:27.700518": {
+      "name": "F_hostel_entrance",
+      "latitude": 23.2107604071538,
+      "longitude": 72.68442735814186,
+      "timestamp": "2025-04-09T23:32:27.700518",
+      "networks": [
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -88,
+          "signal_percent": 57,
+          "auth": "WPA2-Enterprise",
+          "channel": 48,
+          "noise_floor": -95,
+          "snr": 6,
+          "samples": 3,
+          "signal_variance": 15
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "Open",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Enterprise",
+          "channel": 161,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "F_hostel_lobby1_2025-04-09T23:33:38.389490": {
+      "name": "F_hostel_lobby1",
+      "latitude": 23.210772890314082,
+      "longitude": 72.6842984436442,
+      "timestamp": "2025-04-09T23:33:38.389490",
+      "networks": [
+        {
+          "ssid": "eduroam",
+          "signal": -85,
+          "signal_percent": 30,
+          "auth": "WPA2-Enterprise",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 10,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -89,
+          "signal_percent": 21,
+          "auth": "WPA2-Enterprise",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 6,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -97,
+          "signal_percent": 6,
+          "auth": "Open",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "F_hostel_lobby2_2025-04-09T23:34:44.022331": {
+      "name": "F_hostel_lobby2",
+      "latitude": 23.210717502668345,
+      "longitude": 72.68383721639348,
+      "timestamp": "2025-04-09T23:34:44.022331",
+      "networks": [
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -95,
+          "signal_percent": 9,
+          "auth": "Open",
+          "channel": 157,
+          "noise_floor": -95,
+          "snr": 0,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -97,
+          "signal_percent": 6,
+          "auth": "WPA2-Enterprise",
+          "channel": 48,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -97,
+          "signal_percent": 6,
+          "auth": "WPA2-Personal",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -98,
+          "signal_percent": 3,
+          "auth": "WPA2-Enterprise",
+          "channel": 48,
+          "noise_floor": -95,
+          "snr": -3,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "F_hostel_lobby3_2025-04-09T23:35:39.727494": {
+      "name": "F_hostel_lobby3",
+      "latitude": 23.210683683109867,
+      "longitude": 72.68441639530984,
+      "timestamp": "2025-04-09T23:35:39.727494",
+      "networks": [
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -79,
+          "signal_percent": 42,
+          "auth": "WPA2-Personal",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 16,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -86,
+          "signal_percent": 27,
+          "auth": "Open",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 9,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -98,
+          "signal_percent": 3,
+          "auth": "WPA2-Enterprise",
+          "channel": 48,
+          "noise_floor": -95,
+          "snr": -3,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -98,
+          "signal_percent": 3,
+          "auth": "WPA2-Enterprise",
+          "channel": 48,
+          "noise_floor": -95,
+          "snr": -3,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "A_hostel_entrance_2025-04-09T23:37:33.241498": {
+      "name": "A_hostel_entrance",
+      "latitude": 23.210782746953488,
+      "longitude": 72.68436912636307,
+      "timestamp": "2025-04-09T23:37:33.241498",
+      "networks": [
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -77,
+          "signal_percent": 63,
+          "auth": "WPA2-Enterprise",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 18,
+          "samples": 3,
+          "signal_variance": 15
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Enterprise",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "Open",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "A_hostel_lobby1_2025-04-09T23:38:46.327169": {
+      "name": "A_hostel_lobby1",
+      "latitude": 23.211310264895157,
+      "longitude": 72.68391143766006,
+      "timestamp": "2025-04-09T23:38:46.327169",
+      "networks": [
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -82,
+          "signal_percent": 36,
+          "auth": "WPA2-Personal",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 13,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -89,
+          "signal_percent": 21,
+          "auth": "WPA2-Enterprise",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 6,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Enterprise",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "Open",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "A_hostel_lobby2_2025-04-09T23:39:35.763698": {
+      "name": "A_hostel_lobby2",
+      "latitude": 23.211394890690332,
+      "longitude": 72.68388326984451,
+      "timestamp": "2025-04-09T23:39:35.763698",
+      "networks": [
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -82,
+          "signal_percent": 72,
+          "auth": "WPA2-Enterprise",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": 12,
+          "samples": 3,
+          "signal_variance": 16
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -83,
+          "signal_percent": 33,
+          "auth": "WPA2-Personal",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 12,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -95,
+          "signal_percent": 9,
+          "auth": "WPA2-Enterprise",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 0,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "Open",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "A_hostel_lobby3_2025-04-09T23:40:27.437690": {
+      "name": "A_hostel_lobby3",
+      "latitude": 23.211193359852626,
+      "longitude": 72.68398046404614,
+      "timestamp": "2025-04-09T23:40:27.437690",
+      "networks": [
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -85,
+          "signal_percent": 30,
+          "auth": "WPA2-Enterprise",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 10,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -91,
+          "signal_percent": 18,
+          "auth": "WPA2-Personal",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 4,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -94,
+          "signal_percent": 12,
+          "auth": "Open",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 1,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -95,
+          "signal_percent": 9,
+          "auth": "WPA2-Enterprise",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 0,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "new_pc_2025-04-09T23:43:07.138399": {
+      "name": "new_pc",
+      "latitude": 23.210630563254703,
+      "longitude": 72.68446573646048,
+      "timestamp": "2025-04-09T23:43:07.138399",
+      "networks": [
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -94,
+          "signal_percent": 12,
+          "auth": "WPA2-Enterprise",
+          "channel": 44,
+          "noise_floor": -95,
+          "snr": 1,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -97,
+          "signal_percent": 6,
+          "auth": "Open",
+          "channel": 44,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -98,
+          "signal_percent": 3,
+          "auth": "WPA2-Enterprise",
+          "channel": 52,
+          "noise_floor": -95,
+          "snr": -3,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "chimair_room_2025-04-09T23:57:18.085168": {
+      "name": "chimair_room",
+      "latitude": 23.210812657041867,
+      "longitude": 72.68497827309736,
+      "timestamp": "2025-04-09T23:57:18.085168",
+      "networks": [
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -65,
+          "signal_percent": 69,
+          "auth": "WPA2-Enterprise",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 30,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "Open",
+          "channel": 48,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Enterprise",
+          "channel": 48,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "Jasubhai_road_2025-04-10T00:12:50.598102": {
+      "name": "Jasubhai_road",
+      "latitude": 23.210991519392618,
+      "longitude": 72.68489013925975,
+      "timestamp": "2025-04-10T00:12:50.598102",
+      "networks": [
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -82,
+          "signal_percent": 36,
+          "auth": "WPA2-Personal",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 13,
+          "samples": 3
+        },
+        {
+          "ssid": "OPPO Reno10 5G",
+          "signal": -85,
+          "signal_percent": 30,
+          "auth": "WPA2-Personal",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 10,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -85,
+          "signal_percent": 30,
+          "auth": "WPA2-Enterprise",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 10,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -88,
+          "signal_percent": 24,
+          "auth": "Open",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 7,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -95,
+          "signal_percent": 9,
+          "auth": "WPA2-Enterprise",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 0,
+          "samples": 3
+        },
+        {
+          "ssid": "Galaxy M30s8A7F",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Personal",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "AB7_parking_lot_2025-04-10T00:16:48.977274": {
+      "name": "AB7_parking_lot",
+      "latitude": 23.213238051439042,
+      "longitude": 72.68511439629205,
+      "timestamp": "2025-04-10T00:16:48.977274",
+      "networks": [
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -79,
+          "signal_percent": 42,
+          "auth": "Open",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": 15,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -88,
+          "signal_percent": 24,
+          "auth": "WPA2-Enterprise",
+          "channel": 48,
+          "noise_floor": -95,
+          "snr": 7,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -94,
+          "signal_percent": 12,
+          "auth": "WPA2-Enterprise",
+          "channel": 64,
+          "noise_floor": -95,
+          "snr": 1,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "AB6_Entrance_2025-04-10T00:18:44.749552": {
+      "name": "AB6_Entrance",
+      "latitude": 23.21340518322329,
+      "longitude": 72.68502611372612,
+      "timestamp": "2025-04-10T00:18:44.749552",
+      "networks": [
+        {
+          "ssid": "DIRECT-VECRS7110msqU",
+          "signal": -82,
+          "signal_percent": 36,
+          "auth": "WPA2-Personal",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 13,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -98,
+          "signal_percent": 3,
+          "auth": "Open",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": -3,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -98,
+          "signal_percent": 3,
+          "auth": "WPA2-Enterprise",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": -3,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -98,
+          "signal_percent": 3,
+          "auth": "WPA2-Enterprise",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": -3,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "Machine_Shop_2025-04-10T00:20:25.427442": {
+      "name": "Machine_Shop",
+      "latitude": 23.213448978471714,
+      "longitude": 72.68526041689935,
+      "timestamp": "2025-04-10T00:20:25.427442",
+      "networks": [
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -86,
+          "signal_percent": 27,
+          "auth": "Open",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 9,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -92,
+          "signal_percent": 15,
+          "auth": "WPA2-Enterprise",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 3,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -94,
+          "signal_percent": 12,
+          "auth": "WPA2-Enterprise",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": 1,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "AB6_faculty_Lounge_2025-04-10T00:22:10.912820": {
+      "name": "AB6_faculty_Lounge",
+      "latitude": 23.213459655531935,
+      "longitude": 72.68497774313391,
+      "timestamp": "2025-04-10T00:22:10.912820",
+      "networks": [
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -81,
+          "signal_percent": 79,
+          "auth": "Open",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": 13,
+          "samples": 3,
+          "signal_variance": 18
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -91,
+          "signal_percent": 18,
+          "auth": "WPA2-Enterprise",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 4,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Enterprise",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "AB7_Backside_2025-04-10T00:23:59.375879": {
+      "name": "AB7_Backside",
+      "latitude": 23.213448295405918,
+      "longitude": 72.68499090547206,
+      "timestamp": "2025-04-10T00:23:59.375879",
+      "networks": [
+        {
+          "ssid": "P2",
+          "signal": -71,
+          "signal_percent": 57,
+          "auth": "Open",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 24,
+          "samples": 3
+        },
+        {
+          "ssid": "P1",
+          "signal": -83,
+          "signal_percent": 33,
+          "auth": "Open",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 12,
+          "samples": 3
+        },
+        {
+          "ssid": "EEEL5",
+          "signal": -88,
+          "signal_percent": 24,
+          "auth": "WPA2-Personal",
+          "channel": 40,
+          "noise_floor": -95,
+          "snr": 7,
+          "samples": 3
+        },
+        {
+          "ssid": "EEE_LAB_2.4GHz",
+          "signal": -88,
+          "signal_percent": 24,
+          "auth": "WPA2-Personal",
+          "channel": 8,
+          "noise_floor": -95,
+          "snr": 7,
+          "samples": 3
+        },
+        {
+          "ssid": "DIRECT-VECRS7110msqU",
+          "signal": -92,
+          "signal_percent": 15,
+          "auth": "WPA2-Personal",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 3,
+          "samples": 3
+        },
+        {
+          "ssid": "JioAirfiberA6",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Personal",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Enterprise",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Enterprise",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -97,
+          "signal_percent": 6,
+          "auth": "Open",
+          "channel": 64,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "Director-Office",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "Open",
+          "channel": 13,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "Ab7_Computer_labs_2025-04-10T00:26:03.058711": {
+      "name": "Ab7_Computer_labs",
+      "latitude": 23.213335249905576,
+      "longitude": 72.68457486176244,
+      "timestamp": "2025-04-10T00:26:03.058711",
+      "networks": [
+        {
+          "ssid": "DIRECT-FFCRS7109msLO",
+          "signal": -61,
+          "signal_percent": 77,
+          "auth": "WPA2-Personal",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 34,
+          "samples": 3
+        },
+        {
+          "ssid": "DIRECT-aDCRS7208msMw",
+          "signal": -80,
+          "signal_percent": 39,
+          "auth": "WPA2-Personal",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 15,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -81,
+          "signal_percent": 63,
+          "auth": "WPA2-Enterprise",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 13,
+          "samples": 3,
+          "signal_variance": 11
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -92,
+          "signal_percent": 15,
+          "auth": "Open",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": 3,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -97,
+          "signal_percent": 6,
+          "auth": "WPA2-Enterprise",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "Ab7_Corridor_2025-04-10T00:27:32.262223": {
+      "name": "Ab7_Corridor",
+      "latitude": 23.213324007126857,
+      "longitude": 72.68495089879863,
+      "timestamp": "2025-04-10T00:27:32.262223",
+      "networks": [
+        {
+          "ssid": "DIRECT-A8CRS7101msEA",
+          "signal": -62,
+          "signal_percent": 75,
+          "auth": "WPA2-Personal",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 33,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -76,
+          "signal_percent": 60,
+          "auth": "WPA2-Enterprise",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": 19,
+          "samples": 3,
+          "signal_variance": 10
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -86,
+          "signal_percent": 27,
+          "auth": "WPA2-Enterprise",
+          "channel": 48,
+          "noise_floor": -95,
+          "snr": 9,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -86,
+          "signal_percent": 27,
+          "auth": "Open",
+          "channel": 48,
+          "noise_floor": -95,
+          "snr": 9,
+          "samples": 3
+        },
+        {
+          "ssid": "DIRECT-FFCRS7109msLO",
+          "signal": -91,
+          "signal_percent": 18,
+          "auth": "WPA2-Personal",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 4,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "Ab7_2nd_Entrance_2025-04-10T00:29:45.938794": {
+      "name": "Ab7_2nd_Entrance",
+      "latitude": 23.212969908953493,
+      "longitude": 72.68402953016741,
+      "timestamp": "2025-04-10T00:29:45.938794",
+      "networks": [
+        {
+          "ssid": "TP-Link_2B62",
+          "signal": -82,
+          "signal_percent": 36,
+          "auth": "WPA2-Personal",
+          "channel": 5,
+          "noise_floor": -95,
+          "snr": 13,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -84,
+          "signal_percent": 60,
+          "auth": "WPA2-Enterprise",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 10,
+          "samples": 3,
+          "signal_variance": 12
+        },
+        {
+          "ssid": "JioAirfiberA6",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Personal",
+          "channel": 40,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Enterprise",
+          "channel": 40,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "Open",
+          "channel": 40,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "Lal_Minar_2025-04-10T00:31:21.515283": {
+      "name": "Lal_Minar",
+      "latitude": 23.212969908953493,
+      "longitude": 72.68402953016741,
+      "timestamp": "2025-04-10T00:31:21.515283",
+      "networks": [
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -79,
+          "signal_percent": 42,
+          "auth": "WPA2-Enterprise",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 16,
+          "samples": 3
+        },
+        {
+          "ssid": "Airtel-MyWiFi-AMF-311WW-851A",
+          "signal": -82,
+          "signal_percent": 36,
+          "auth": "WPA2-Personal",
+          "channel": 10,
+          "noise_floor": -95,
+          "snr": 13,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -82,
+          "signal_percent": 36,
+          "auth": "Open",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 13,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -88,
+          "signal_percent": 24,
+          "auth": "WPA2-Enterprise",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 7,
+          "samples": 3
+        },
+        {
+          "ssid": "TP-Link_2B62",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Personal",
+          "channel": 5,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "Between_Ab7&AB8_2025-04-10T00:33:17.121641": {
+      "name": "Between_Ab7&AB8",
+      "latitude": 23.213339366489866,
+      "longitude": 72.68419941839925,
+      "timestamp": "2025-04-10T00:33:17.121641",
+      "networks": [
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -81,
+          "signal_percent": 51,
+          "auth": "WPA2-Enterprise",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 14,
+          "samples": 3,
+          "signal_variance": 12
+        },
+        {
+          "ssid": "TP-Link_2B62",
+          "signal": -83,
+          "signal_percent": 33,
+          "auth": "WPA2-Personal",
+          "channel": 5,
+          "noise_floor": -95,
+          "snr": 12,
+          "samples": 3
+        },
+        {
+          "ssid": "DIRECT-71-HP Laser 178nw",
+          "signal": -85,
+          "signal_percent": 30,
+          "auth": "WPA2-Personal",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 10,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -95,
+          "signal_percent": 9,
+          "auth": "WPA2-Enterprise",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 0,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -95,
+          "signal_percent": 9,
+          "auth": "Open",
+          "channel": 52,
+          "noise_floor": -95,
+          "snr": 0,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "Ab4Entrance_2025-04-10T00:35:31.262696": {
+      "name": "Ab4Entrance",
+      "latitude": 23.213838,
+      "longitude": 72.685143,
+      "timestamp": "2025-04-10T00:35:31.262696",
+      "networks": [
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -74,
+          "signal_percent": 66,
+          "auth": "WPA2-Enterprise",
+          "channel": 52,
+          "noise_floor": -95,
+          "snr": 21,
+          "samples": 3,
+          "signal_variance": 12
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -88,
+          "signal_percent": 24,
+          "auth": "Open",
+          "channel": 52,
+          "noise_floor": -95,
+          "snr": 7,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -98,
+          "signal_percent": 3,
+          "auth": "WPA2-Enterprise",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": -3,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "Ab4Labs_1_2025-04-10T00:38:30.178608": {
+      "name": "Ab4Labs_1",
+      "latitude": 23.213794945672447,
+      "longitude": 72.68436207043717,
+      "timestamp": "2025-04-10T00:38:30.178608",
+      "networks": [
+        {
+          "ssid": "IITGN-Robotics-Lab",
+          "signal": -80,
+          "signal_percent": 39,
+          "auth": "WPA2-Personal",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 15,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -91,
+          "signal_percent": 42,
+          "auth": "WPA2-Enterprise",
+          "channel": 40,
+          "noise_floor": -95,
+          "snr": 4,
+          "samples": 3,
+          "signal_variance": 10
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -98,
+          "signal_percent": 3,
+          "auth": "WPA2-Enterprise",
+          "channel": 157,
+          "noise_floor": -95,
+          "snr": -3,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -98,
+          "signal_percent": 3,
+          "auth": "Open",
+          "channel": 157,
+          "noise_floor": -95,
+          "snr": -3,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "Ab4Labs_2_2025-04-10T00:39:51.964481": {
+      "name": "Ab4Labs_2",
+      "latitude": 23.214113158345445,
+      "longitude": 72.68435160596688,
+      "timestamp": "2025-04-10T00:39:51.964481",
+      "networks": [
+        {
+          "ssid": "DIRECT-F4-HP Laser 108w",
+          "signal": -59,
+          "signal_percent": 81,
+          "auth": "WPA2-Personal",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 36,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -71,
+          "signal_percent": 66,
+          "auth": "WPA2-Enterprise",
+          "channel": 64,
+          "noise_floor": -95,
+          "snr": 23,
+          "samples": 3,
+          "signal_variance": 7
+        },
+        {
+          "ssid": "IITGN-Robotics-Lab",
+          "signal": -86,
+          "signal_percent": 27,
+          "auth": "WPA2-Personal",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 9,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -94,
+          "signal_percent": 12,
+          "auth": "WPA2-Enterprise",
+          "channel": 44,
+          "noise_floor": -95,
+          "snr": 1,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -95,
+          "signal_percent": 9,
+          "auth": "Open",
+          "channel": 44,
+          "noise_floor": -95,
+          "snr": 0,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "Between_Ab3&AB4_2025-04-10T00:41:22.435260": {
+      "name": "Between_Ab3&AB4",
+      "latitude": 23.21438866461263,
+      "longitude": 72.68457846332778,
+      "timestamp": "2025-04-10T00:41:22.435260",
+      "networks": [
+        {
+          "ssid": "DIRECT-F4-HP Laser 108w",
+          "signal": -59,
+          "signal_percent": 81,
+          "auth": "WPA2-Personal",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 36,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -70,
+          "signal_percent": 60,
+          "auth": "WPA2-Enterprise",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 25,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-Robotics-Lab",
+          "signal": -86,
+          "signal_percent": 27,
+          "auth": "WPA2-Personal",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 9,
+          "samples": 3
+        },
+        {
+          "ssid": "Making",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Personal",
+          "channel": 4,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "DIRECT-g2-EPSON-M2170 Series",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Personal",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "Open",
+          "channel": 52,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Enterprise",
+          "channel": 52,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "Director-Office",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "Open",
+          "channel": 13,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "Ab5Entance_2025-04-10T00:43:01.972015": {
+      "name": "Ab5Entance",
+      "latitude": 23.214233519376734,
+      "longitude": 72.68486231295785,
+      "timestamp": "2025-04-10T00:43:01.972015",
+      "networks": [
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -60,
+          "signal_percent": 79,
+          "auth": "WPA2-Enterprise",
+          "channel": 52,
+          "noise_floor": -95,
+          "snr": 35,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "Open",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Enterprise",
+          "channel": 52,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "Director-Office",
+          "signal": -98,
+          "signal_percent": 3,
+          "auth": "Open",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": -3,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "ISTFoffice&Labs_2025-04-10T00:44:31.889596": {
+      "name": "ISTFoffice&Labs",
+      "latitude": 23.21454713913156,
+      "longitude": 72.68533379765756,
+      "timestamp": "2025-04-10T00:44:31.889596",
+      "networks": [
+        {
+          "ssid": "EEEL_5",
+          "signal": -60,
+          "signal_percent": 79,
+          "auth": "WPA2-Personal",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 35,
+          "samples": 3
+        },
+        {
+          "ssid": "EEEL_2.4",
+          "signal": -62,
+          "signal_percent": 76,
+          "auth": "WPA2-Personal",
+          "channel": 3,
+          "noise_floor": -95,
+          "snr": 33,
+          "samples": 3
+        },
+        {
+          "ssid": "test2",
+          "signal": -68,
+          "signal_percent": 63,
+          "auth": "Open",
+          "channel": 13,
+          "noise_floor": -95,
+          "snr": 27,
+          "samples": 3
+        },
+        {
+          "ssid": "test1",
+          "signal": -68,
+          "signal_percent": 63,
+          "auth": "WPA2-Enterprise",
+          "channel": 13,
+          "noise_floor": -95,
+          "snr": 27,
+          "samples": 3
+        },
+        {
+          "ssid": "DIRECT-6WDESKTOP-197SUNRmsIY",
+          "signal": -80,
+          "signal_percent": 39,
+          "auth": "WPA2-Personal",
+          "channel": 44,
+          "noise_floor": -95,
+          "snr": 15,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -83,
+          "signal_percent": 33,
+          "auth": "WPA2-Personal",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": 12,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -85,
+          "signal_percent": 75,
+          "auth": "WPA2-Enterprise",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 9,
+          "samples": 3,
+          "signal_variance": 20
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "Open",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Enterprise",
+          "channel": 44,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "Workspace_2025-04-10T00:46:23.024451": {
+      "name": "Workspace",
+      "latitude": 23.21433556531402,
+      "longitude": 72.68502826410135,
+      "timestamp": "2025-04-10T00:46:23.024451",
+      "networks": [
+        {
+          "ssid": "CPPLUS-A7EE",
+          "signal": -62,
+          "signal_percent": 76,
+          "auth": "WPA3-Personal",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 33,
+          "samples": 3
+        },
+        {
+          "ssid": "DIRECT-F4-HP Laser 108w",
+          "signal": -89,
+          "signal_percent": 21,
+          "auth": "WPA2-Personal",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 6,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -92,
+          "signal_percent": 15,
+          "auth": "WPA2-Enterprise",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 3,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -95,
+          "signal_percent": 9,
+          "auth": "Open",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 0,
+          "samples": 3
+        },
+        {
+          "ssid": "Director-Office",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "Open",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -97,
+          "signal_percent": 6,
+          "auth": "WPA2-Enterprise",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "Ab3Entance_2025-04-10T01:00:11.099695": {
+      "name": "Ab3Entance",
+      "latitude": 23.214321405272663,
+      "longitude": 72.68495377157353,
+      "timestamp": "2025-04-10T01:00:11.099695",
+      "networks": [
+        {
+          "ssid": "Making",
+          "signal": -67,
+          "signal_percent": 66,
+          "auth": "WPA2-Personal",
+          "channel": 4,
+          "noise_floor": -95,
+          "snr": 28,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -85,
+          "signal_percent": 57,
+          "auth": "WPA2-Enterprise",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 10,
+          "samples": 3,
+          "signal_variance": 12
+        },
+        {
+          "ssid": "Saisiddhu\u2019s iPhone",
+          "signal": -88,
+          "signal_percent": 24,
+          "auth": "WPA2-Personal",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 7,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -95,
+          "signal_percent": 9,
+          "auth": "WPA2-Enterprise",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 0,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -95,
+          "signal_percent": 9,
+          "auth": "Open",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 0,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "Ab3Office_2025-04-10T01:02:32.357496": {
+      "name": "Ab3Office",
+      "latitude": 23.214525,
+      "longitude": 72.684635,
+      "timestamp": "2025-04-10T01:02:32.357496",
+      "networks": [
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -77,
+          "signal_percent": 63,
+          "auth": "WPA2-Enterprise",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": 18,
+          "samples": 3,
+          "signal_variance": 13
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -98,
+          "signal_percent": 3,
+          "auth": "WPA2-Enterprise",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": -3,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -98,
+          "signal_percent": 3,
+          "auth": "Open",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": -3,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "Ab1/101_2025-04-10T01:04:45.069123": {
+      "name": "Ab1/101",
+      "latitude": 23.215015,
+      "longitude": 72.684578,
+      "timestamp": "2025-04-10T01:04:45.069123",
+      "networks": [
+        {
+          "ssid": "eduroam",
+          "signal": -61,
+          "signal_percent": 78,
+          "auth": "WPA2-Enterprise",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 34,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -71,
+          "signal_percent": 57,
+          "auth": "WPA2-Enterprise",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 24,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -74,
+          "signal_percent": 51,
+          "auth": "Open",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 21,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "Rangmanch_Road1_2025-04-10T01:06:27.176372": {
+      "name": "Rangmanch_Road1",
+      "latitude": 23.214947778715885,
+      "longitude": 72.68454699759967,
+      "timestamp": "2025-04-10T01:06:27.176372",
+      "networks": [
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -85,
+          "signal_percent": 66,
+          "auth": "WPA2-Enterprise",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 9,
+          "samples": 3,
+          "signal_variance": 16
+        },
+        {
+          "ssid": "DIRECT-y6CRS1101msEX",
+          "signal": -91,
+          "signal_percent": 18,
+          "auth": "WPA2-Personal",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 4,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "Open",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -98,
+          "signal_percent": 3,
+          "auth": "WPA2-Enterprise",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": -3,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "2D_Cafe_2025-04-10T01:07:37.314280": {
+      "name": "2D_Cafe",
+      "latitude": 23.214996161577186,
+      "longitude": 72.68485246190708,
+      "timestamp": "2025-04-10T01:07:37.314280",
+      "networks": [
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -60,
+          "signal_percent": 80,
+          "auth": "WPA2-Enterprise",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": 34,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -68,
+          "signal_percent": 63,
+          "auth": "Open",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 27,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -68,
+          "signal_percent": 63,
+          "auth": "WPA2-Enterprise",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 27,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "Jibaben_Audi_2025-04-10T01:09:16.235610": {
+      "name": "Jibaben_Audi",
+      "latitude": 23.214887717867153,
+      "longitude": 72.68520017420258,
+      "timestamp": "2025-04-10T01:09:16.235610",
+      "networks": [
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -91,
+          "signal_percent": 39,
+          "auth": "WPA2-Enterprise",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": 3,
+          "samples": 3,
+          "signal_variance": 9
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "Open",
+          "channel": 157,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -97,
+          "signal_percent": 6,
+          "auth": "WPA2-Enterprise",
+          "channel": 157,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "AB1_Space_2025-04-10T01:10:26.729449": {
+      "name": "AB1_Space",
+      "latitude": 23.214858074654863,
+      "longitude": 72.68467554217871,
+      "timestamp": "2025-04-10T01:10:26.729449",
+      "networks": [
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -74,
+          "signal_percent": 75,
+          "auth": "WPA2-Enterprise",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": 21,
+          "samples": 3,
+          "signal_variance": 20
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -94,
+          "signal_percent": 12,
+          "auth": "Open",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 1,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -95,
+          "signal_percent": 9,
+          "auth": "WPA2-Enterprise",
+          "channel": 64,
+          "noise_floor": -95,
+          "snr": 0,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "AB1_AB2_JUNCTIOM_2025-04-10T01:12:27.546012": {
+      "name": "AB1_AB2_JUNCTIOM",
+      "latitude": 23.21455565899668,
+      "longitude": 72.68480494842389,
+      "timestamp": "2025-04-10T01:12:27.546012",
+      "networks": [
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -94,
+          "signal_percent": 12,
+          "auth": "Open",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": 1,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -94,
+          "signal_percent": 12,
+          "auth": "WPA2-Enterprise",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": 1,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -95,
+          "signal_percent": 9,
+          "auth": "WPA2-Enterprise",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": 0,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "Jassubhai_Road_2025-04-10T01:15:45.931634": {
+      "name": "Jassubhai_Road",
+      "latitude": 23.2164,
+      "longitude": 72.6855,
+      "timestamp": "2025-04-10T01:15:45.931634",
+      "networks": [
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -85,
+          "signal_percent": 42,
+          "auth": "WPA2-Enterprise",
+          "channel": 48,
+          "noise_floor": -95,
+          "snr": 10,
+          "samples": 3,
+          "signal_variance": 10
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Enterprise",
+          "channel": 44,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "JioAirfiberA6",
+          "signal": -97,
+          "signal_percent": 6,
+          "auth": "WPA2-Personal",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -97,
+          "signal_percent": 6,
+          "auth": "Open",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "AB6_Backside_2025-04-10T01:18:08.870712": {
+      "name": "AB6_Backside",
+      "latitude": 23.211603906479414,
+      "longitude": 72.68539966836899,
+      "timestamp": "2025-04-10T01:18:08.870712",
+      "networks": [
+        {
+          "ssid": "MIR_lab",
+          "signal": -74,
+          "signal_percent": 51,
+          "auth": "WPA2-Personal",
+          "channel": 5,
+          "noise_floor": -95,
+          "snr": 21,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -86,
+          "signal_percent": 27,
+          "auth": "WPA2-Personal",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 9,
+          "samples": 3
+        },
+        {
+          "ssid": "P1",
+          "signal": -91,
+          "signal_percent": 18,
+          "auth": "Open",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 4,
+          "samples": 3
+        },
+        {
+          "ssid": "EEEL_2.4",
+          "signal": -92,
+          "signal_percent": 15,
+          "auth": "WPA2-Personal",
+          "channel": 3,
+          "noise_floor": -95,
+          "snr": 3,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -95,
+          "signal_percent": 9,
+          "auth": "Open",
+          "channel": 48,
+          "noise_floor": -95,
+          "snr": 0,
+          "samples": 3
+        },
+        {
+          "ssid": "EEEL_5",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Personal",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Enterprise",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Enterprise",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "SnakeRoad_Entrance_2025-04-10T01:20:32.273906": {
+      "name": "SnakeRoad_Entrance",
+      "latitude": 23.21183430120482,
+      "longitude": 72.68532774372065,
+      "timestamp": "2025-04-10T01:20:32.273906",
+      "networks": [
+        {
+          "ssid": "JioAirfiberA6",
+          "signal": -80,
+          "signal_percent": 39,
+          "auth": "WPA2-Personal",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 15,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -91,
+          "signal_percent": 21,
+          "auth": "WPA2-Enterprise",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": 3,
+          "samples": 3,
+          "signal_variance": 4
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -91,
+          "signal_percent": 21,
+          "auth": "Open",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": 3,
+          "samples": 3,
+          "signal_variance": 4
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -91,
+          "signal_percent": 24,
+          "auth": "WPA2-Enterprise",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": 3,
+          "samples": 3,
+          "signal_variance": 5
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -97,
+          "signal_percent": 6,
+          "auth": "WPA2-Personal",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "DIRECT-BGCRS10102msKS",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Personal",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        },
+        {
+          "ssid": "ultimaker",
+          "signal": -97,
+          "signal_percent": 5,
+          "auth": "WPA2-Personal",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": -2,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    }
+  },
+    "D_mid_lobby_2025-04-09T23:49:15.528532": {
+      "name": "D_mid_lobby",
+      "latitude": 23.210373,
+      "longitude": 72.6853937,
+      "timestamp": "2025-04-09T23:49:15.528532",
+      "networks": [
+        {
+          "ssid": "Spyder \ud83d\udd77\ufe0f",
+          "signal": -56,
+          "signal_percent": 88,
+          "auth": "WPA2-Personal",
+          "channel": 3,
+          "noise_floor": -95,
+          "snr": 39,
+          "samples": 3
+        },
+        {
+          "ssid": "ISTF-Dev",
+          "signal": -58,
+          "signal_percent": 83,
+          "auth": "Open",
+          "channel": 56,
+          "noise_floor": -95,
+          "snr": 37,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -59,
+          "signal_percent": 82,
+          "auth": "WPA2-Personal",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 36,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -59,
+          "signal_percent": 82,
+          "auth": "Open",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 36,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -64,
+          "signal_percent": 72,
+          "auth": "WPA2-Enterprise",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 31,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -78,
+          "signal_percent": 43,
+          "auth": "WPA2-Enterprise",
+          "channel": 64,
+          "noise_floor": -95,
+          "snr": 17,
+          "samples": 3
+        },
+        {
+          "ssid": "Network type            : Infrastructure",
+          "signal": -93,
+          "signal_percent": 14,
+          "auth": "Open",
+          "channel": 56,
+          "noise_floor": -95,
+          "snr": 2,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "D_mid_lobby_2025-04-09T23:50:54.545327": {
+      "name": "D_mid_lobby",
+      "latitude": 23.2103714,
+      "longitude": 72.6855158,
+      "timestamp": "2025-04-09T23:50:54.545327",
+      "networks": [
+        {
+          "ssid": "ISTF-Dev",
+          "signal": -58,
+          "signal_percent": 83,
+          "auth": "Open",
+          "channel": 56,
+          "noise_floor": -95,
+          "snr": 37,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -59,
+          "signal_percent": 82,
+          "auth": "Open",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 36,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -59,
+          "signal_percent": 82,
+          "auth": "WPA2-Personal",
+          "channel": 56,
+          "noise_floor": -95,
+          "snr": 36,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -70,
+          "signal_percent": 60,
+          "auth": "WPA2-Enterprise",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 25,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -87,
+          "signal_percent": 26,
+          "auth": "WPA2-Enterprise",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": 8,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "D_right_lobby_2025-04-09T23:53:50.500377": {
+      "name": "D_right_lobby",
+      "latitude": 23.2103144,
+      "longitude": 72.685388,
+      "timestamp": "2025-04-09T23:53:50.500377",
+      "networks": [
+        {
+          "ssid": "eduroam",
+          "signal": -50,
+          "signal_percent": 99,
+          "auth": "WPA2-Enterprise",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 45,
+          "samples": 3
+        },
+        {
+          "ssid": "Network type            : Infrastructure",
+          "signal": -65,
+          "signal_percent": 70,
+          "auth": "Open",
+          "channel": 56,
+          "noise_floor": -95,
+          "snr": 30,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -73,
+          "signal_percent": 53,
+          "auth": "WPA2-Enterprise",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": 22,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -83,
+          "signal_percent": 33,
+          "auth": "Open",
+          "channel": 161,
+          "noise_floor": -95,
+          "snr": 12,
+          "samples": 3
+        },
+        {
+          "ssid": "DIRECT-JtAMAN-LAPTOPmsSP",
+          "signal": -87,
+          "signal_percent": 26,
+          "auth": "WPA2-Personal",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 8,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "sports_complex_2025-04-10T00:17:20.261830": {
+      "name": "sports_complex",
+      "latitude": 23.2117893,
+      "longitude": 72.6880227,
+      "timestamp": "2025-04-10T00:17:20.261830",
+      "networks": [
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -59,
+          "signal_percent": 82,
+          "auth": "WPA2-Enterprise",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 36,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -64,
+          "signal_percent": 72,
+          "auth": "WPA2-Personal",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 31,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -65,
+          "signal_percent": 70,
+          "auth": "Open",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 30,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -81,
+          "signal_percent": 38,
+          "auth": "WPA2-Enterprise",
+          "channel": 157,
+          "noise_floor": -95,
+          "snr": 14,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "central_arcade_front_2025-04-10T00:21:24.229149": {
+      "name": "central_arcade_front",
+      "latitude": 23.2116597,
+      "longitude": 72.686608,
+      "timestamp": "2025-04-10T00:21:24.229149",
+      "networks": [
+        {
+          "ssid": "eduroam",
+          "signal": -55,
+          "signal_percent": 90,
+          "auth": "WPA2-Enterprise",
+          "channel": 64,
+          "noise_floor": -95,
+          "snr": 40,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -81,
+          "signal_percent": 38,
+          "auth": "WPA2-Personal",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 14,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -84,
+          "signal_percent": 31,
+          "auth": "WPA2-Enterprise",
+          "channel": 56,
+          "noise_floor": -95,
+          "snr": 11,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -85,
+          "signal_percent": 29,
+          "auth": "Open",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 10,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "central_arcade_back_2025-04-10T00:22:40.049161": {
+      "name": "central_arcade_back",
+      "latitude": 23.211698,
+      "longitude": 72.6866051,
+      "timestamp": "2025-04-10T00:22:40.049161",
+      "networks": [
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -77,
+          "signal_percent": 46,
+          "auth": "WPA2-Personal",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 18,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -80,
+          "signal_percent": 40,
+          "auth": "Open",
+          "channel": 48,
+          "noise_floor": -95,
+          "snr": 15,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -80,
+          "signal_percent": 40,
+          "auth": "WPA2-Enterprise",
+          "channel": 48,
+          "noise_floor": -95,
+          "snr": 15,
+          "samples": 3
+        },
+        {
+          "ssid": "ISTF-Dev",
+          "signal": -87,
+          "signal_percent": 26,
+          "auth": "Open",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 8,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -88,
+          "signal_percent": 24,
+          "auth": "WPA2-Enterprise",
+          "channel": 48,
+          "noise_floor": -95,
+          "snr": 7,
+          "samples": 3
+        },
+        {
+          "ssid": "Network type            : Infrastructure",
+          "signal": -88,
+          "signal_percent": 24,
+          "auth": "Open",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 7,
+          "samples": 3
+        },
+        {
+          "ssid": "JioAirfiberA6",
+          "signal": -93,
+          "signal_percent": 14,
+          "auth": "WPA2-Personal",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 2,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "AB13_front_2025-04-10T00:26:20.082412": {
+      "name": "AB13_front",
+      "latitude": 23.2135617,
+      "longitude": 72.6866367,
+      "timestamp": "2025-04-10T00:26:20.082412",
+      "networks": [
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -60,
+          "signal_percent": 81,
+          "auth": "Open",
+          "channel": 140,
+          "noise_floor": -95,
+          "snr": 34,
+          "samples": 3,
+          "signal_variance": 2
+        },
+        {
+          "ssid": "DIRECT-94-HP Laser 178nw",
+          "signal": -84,
+          "signal_percent": 31,
+          "auth": "WPA2-Personal",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 11,
+          "samples": 2
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -89,
+          "signal_percent": 22,
+          "auth": "WPA3-Enterprise",
+          "channel": 140,
+          "noise_floor": -95,
+          "snr": 6,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -90,
+          "signal_percent": 20,
+          "auth": "WPA2-Enterprise",
+          "channel": 140,
+          "noise_floor": -95,
+          "snr": 5,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "AB13_back_2025-04-10T00:28:36.828229": {
+      "name": "AB13_back",
+      "latitude": 23.213589,
+      "longitude": 72.6870074,
+      "timestamp": "2025-04-10T00:28:36.828229",
+      "networks": [
+        {
+          "ssid": "eduroam",
+          "signal": -56,
+          "signal_percent": 88,
+          "auth": "WPA3-Enterprise",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 39,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -82,
+          "signal_percent": 35,
+          "auth": "WPA2-Enterprise",
+          "channel": 44,
+          "noise_floor": -95,
+          "snr": 13,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -93,
+          "signal_percent": 14,
+          "auth": "Open",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": 2,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "AB12_front_2025-04-10T00:30:12.257759": {
+      "name": "AB12_front",
+      "latitude": 23.2136014,
+      "longitude": 72.6874963,
+      "timestamp": "2025-04-10T00:30:12.257759",
+      "networks": [
+        {
+          "ssid": "VVDN",
+          "signal": -64,
+          "signal_percent": 72,
+          "auth": "WPA2-Personal",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 31,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -85,
+          "signal_percent": 29,
+          "auth": "Open",
+          "channel": 48,
+          "noise_floor": -95,
+          "snr": 10,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -85,
+          "signal_percent": 29,
+          "auth": "WPA2-Enterprise",
+          "channel": 48,
+          "noise_floor": -95,
+          "snr": 10,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -87,
+          "signal_percent": 26,
+          "auth": "WPA3-Enterprise",
+          "channel": 48,
+          "noise_floor": -95,
+          "snr": 8,
+          "samples": 3
+        },
+        {
+          "ssid": "VVDN-5G",
+          "signal": -87,
+          "signal_percent": 26,
+          "auth": "WPA2-Personal",
+          "channel": 116,
+          "noise_floor": -95,
+          "snr": 8,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "AB12_back_2025-04-10T00:31:17.564852": {
+      "name": "AB12_back",
+      "latitude": 23.2136216,
+      "longitude": 72.6875347,
+      "timestamp": "2025-04-10T00:31:17.564852",
+      "networks": [
+        {
+          "ssid": "VVDN",
+          "signal": -64,
+          "signal_percent": 72,
+          "auth": "WPA2-Personal",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 31,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -78,
+          "signal_percent": 43,
+          "auth": "Open",
+          "channel": 36,
+          "noise_floor": -95,
+          "snr": 17,
+          "samples": 3
+        },
+        {
+          "ssid": "VVDN-5G",
+          "signal": -87,
+          "signal_percent": 26,
+          "auth": "WPA2-Personal",
+          "channel": 116,
+          "noise_floor": -95,
+          "snr": 8,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -89,
+          "signal_percent": 22,
+          "auth": "WPA2-Enterprise",
+          "channel": 153,
+          "noise_floor": -95,
+          "snr": 6,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -90,
+          "signal_percent": 20,
+          "auth": "WPA3-Enterprise",
+          "channel": 153,
+          "noise_floor": -95,
+          "snr": 5,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "AB11_front_2025-04-10T00:36:08.537383": {
+      "name": "AB11_front",
+      "latitude": 23.2141107,
+      "longitude": 72.686746,
+      "timestamp": "2025-04-10T00:36:08.537383",
+      "networks": [
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -83,
+          "signal_percent": 33,
+          "auth": "WPA2-Enterprise",
+          "channel": 136,
+          "noise_floor": -95,
+          "snr": 12,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -83,
+          "signal_percent": 33,
+          "auth": "WPA3-Enterprise",
+          "channel": 136,
+          "noise_floor": -95,
+          "snr": 12,
+          "samples": 3
+        },
+        {
+          "ssid": "DIR-825-8A4B",
+          "signal": -89,
+          "signal_percent": 22,
+          "auth": "WPA2-Personal",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 6,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -90,
+          "signal_percent": 20,
+          "auth": "Open",
+          "channel": 161,
+          "noise_floor": -95,
+          "snr": 5,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "AB11_back_2025-04-10T00:37:33.608635": {
+      "name": "AB11_back",
+      "latitude": 23.2142506,
+      "longitude": 72.6869689,
+      "timestamp": "2025-04-10T00:37:33.608635",
+      "networks": [
+        {
+          "ssid": "eduroam",
+          "signal": -57,
+          "signal_percent": 86,
+          "auth": "WPA3-Enterprise",
+          "channel": 64,
+          "noise_floor": -95,
+          "snr": 38,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -67,
+          "signal_percent": 65,
+          "auth": "Open",
+          "channel": 112,
+          "noise_floor": -95,
+          "snr": 28,
+          "samples": 3
+        },
+        {
+          "ssid": "HP-Print-2C-LaserJet Pro MFP",
+          "signal": -80,
+          "signal_percent": 40,
+          "auth": "WPA2-Personal",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 15,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -84,
+          "signal_percent": 31,
+          "auth": "WPA2-Enterprise",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 11,
+          "samples": 3
+        },
+        {
+          "ssid": "DIR-825-8A4B",
+          "signal": -88,
+          "signal_percent": 24,
+          "auth": "WPA2-Personal",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 7,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "AB11_mid_2025-04-10T00:40:18.515164": {
+      "name": "AB11_mid",
+      "latitude": 23.2016375,
+      "longitude": 72.674973,
+      "timestamp": "2025-04-10T00:40:18.515164",
+      "networks": [
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -57,
+          "signal_percent": 85,
+          "auth": "Open",
+          "channel": 108,
+          "noise_floor": -95,
+          "snr": 38,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -57,
+          "signal_percent": 85,
+          "auth": "WPA3-Enterprise",
+          "channel": 108,
+          "noise_floor": -95,
+          "snr": 38,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -89,
+          "signal_percent": 22,
+          "auth": "WPA2-Enterprise",
+          "channel": 161,
+          "noise_floor": -95,
+          "snr": 6,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "AB10_back_2025-04-10T00:44:15.847709": {
+      "name": "AB10_back",
+      "latitude": 23.2016375,
+      "longitude": 72.674973,
+      "timestamp": "2025-04-10T00:44:15.847709",
+      "networks": [
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -61,
+          "signal_percent": 78,
+          "auth": "Open",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 34,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -61,
+          "signal_percent": 78,
+          "auth": "WPA3-Enterprise",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 34,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -61,
+          "signal_percent": 78,
+          "auth": "WPA2-Enterprise",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 34,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "AB10_front_2025-04-10T00:45:39.057912": {
+      "name": "AB10_front",
+      "latitude": 23.2146927,
+      "longitude": 72.6867499,
+      "timestamp": "2025-04-10T00:45:39.057912",
+      "networks": [
+        {
+          "ssid": "DIRECT-BGCRS10102msKS",
+          "signal": -59,
+          "signal_percent": 82,
+          "auth": "WPA2-Personal",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 36,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -88,
+          "signal_percent": 24,
+          "auth": "WPA3-Enterprise",
+          "channel": 40,
+          "noise_floor": -95,
+          "snr": 7,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -89,
+          "signal_percent": 22,
+          "auth": "Open",
+          "channel": 52,
+          "noise_floor": -95,
+          "snr": 6,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -90,
+          "signal_percent": 20,
+          "auth": "WPA2-Enterprise",
+          "channel": 52,
+          "noise_floor": -95,
+          "snr": 5,
+          "samples": 3
+        },
+        {
+          "ssid": "DIRECT-OSCRS10105msQX",
+          "signal": -91,
+          "signal_percent": 18,
+          "auth": "WPA2-Personal",
+          "channel": 48,
+          "noise_floor": -95,
+          "snr": 4,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "jasubhai_2025-04-10T00:53:15.398522": {
+      "name": "jasubhai",
+      "latitude": 23.2146613,
+      "longitude": 72.6855811,
+      "timestamp": "2025-04-10T00:53:15.398522",
+      "networks": [
+        {
+          "ssid": "eduroam",
+          "signal": -87,
+          "signal_percent": 26,
+          "auth": "WPA2-Enterprise",
+          "channel": 44,
+          "noise_floor": -95,
+          "snr": 8,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -87,
+          "signal_percent": 26,
+          "auth": "Open",
+          "channel": 44,
+          "noise_floor": -95,
+          "snr": 8,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -88,
+          "signal_percent": 24,
+          "auth": "WPA2-Enterprise",
+          "channel": 44,
+          "noise_floor": -95,
+          "snr": 7,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "I_left_lobby_2025-04-09T22:56:05.462847": {
+      "name": "I_left_lobby",
+      "latitude": 23.2095855,
+      "longitude": 72.6850008,
+      "timestamp": "2025-04-09T22:56:05.462847",
+      "networks": [
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -71,
+          "signal_percent": 57,
+          "auth": "Open",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 24,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -71,
+          "signal_percent": 57,
+          "auth": "WPA2-Personal",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 24,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -73,
+          "signal_percent": 53,
+          "auth": "WPA2-Enterprise",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 22,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -89,
+          "signal_percent": 22,
+          "auth": "WPA2-Enterprise",
+          "channel": 44,
+          "noise_floor": -95,
+          "snr": 6,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "I_entrance_2025-04-09T22:57:17.969198": {
+      "name": "I_entrance",
+      "latitude": 23.2098398,
+      "longitude": 72.6850441,
+      "timestamp": "2025-04-09T22:57:17.969198",
+      "networks": [
+        {
+          "ssid": "POCO M2 Pro",
+          "signal": -75,
+          "signal_percent": 60,
+          "auth": "WPA2-Personal",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 20,
+          "samples": 3,
+          "signal_variance": 8
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -77,
+          "signal_percent": 53,
+          "auth": "Open",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 17,
+          "samples": 3,
+          "signal_variance": 4
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -77,
+          "signal_percent": 57,
+          "auth": "WPA2-Personal",
+          "channel": 64,
+          "noise_floor": -95,
+          "snr": 17,
+          "samples": 3,
+          "signal_variance": 10
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -80,
+          "signal_percent": 57,
+          "auth": "WPA2-Enterprise",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 14,
+          "samples": 3,
+          "signal_variance": 8
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -87,
+          "signal_percent": 29,
+          "auth": "WPA2-Enterprise",
+          "channel": 161,
+          "noise_floor": -95,
+          "snr": 8,
+          "samples": 3,
+          "signal_variance": 3
+        },
+        {
+          "ssid": "Network type            : Infrastructure",
+          "signal": -88,
+          "signal_percent": 24,
+          "auth": "Open",
+          "channel": 52,
+          "noise_floor": -95,
+          "snr": 6,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "I_right_lobby_2025-04-09T22:58:39.471234": {
+      "name": "I_right_lobby",
+      "latitude": 23.2100831,
+      "longitude": 72.6849307,
+      "timestamp": "2025-04-09T22:58:39.471234",
+      "networks": [
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -78,
+          "signal_percent": 43,
+          "auth": "Open",
+          "channel": 161,
+          "noise_floor": -95,
+          "snr": 17,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -81,
+          "signal_percent": 38,
+          "auth": "WPA2-Enterprise",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 14,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -82,
+          "signal_percent": 35,
+          "auth": "WPA2-Personal",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 13,
+          "samples": 3
+        },
+        {
+          "ssid": "Network type            : Infrastructure",
+          "signal": -87,
+          "signal_percent": 26,
+          "auth": "Open",
+          "channel": 52,
+          "noise_floor": -95,
+          "snr": 8,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -93,
+          "signal_percent": 14,
+          "auth": "WPA2-Enterprise",
+          "channel": 48,
+          "noise_floor": -95,
+          "snr": 2,
+          "samples": 3
+        },
+        {
+          "ssid": "POCO M2 Pro",
+          "signal": -95,
+          "signal_percent": 10,
+          "auth": "WPA2-Personal",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 0,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "J_left_lobby_2025-04-09T23:01:16.116589": {
+      "name": "J_left_lobby",
+      "latitude": 23.2099893,
+      "longitude": 72.6855047,
+      "timestamp": "2025-04-09T23:01:16.116589",
+      "networks": [
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -66,
+          "signal_percent": 67,
+          "auth": "WPA2-Personal",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 29,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -73,
+          "signal_percent": 53,
+          "auth": "WPA2-Enterprise",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 22,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -77,
+          "signal_percent": 46,
+          "auth": "Open",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 18,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -87,
+          "signal_percent": 26,
+          "auth": "WPA2-Enterprise",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 8,
+          "samples": 3
+        },
+        {
+          "ssid": "CPPLUS-B041",
+          "signal": -87,
+          "signal_percent": 26,
+          "auth": "WPA3-Personal",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 8,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "J_entrance_2025-04-09T23:02:26.636771": {
+      "name": "J_entrance",
+      "latitude": 23.2099963,
+      "longitude": 72.6854823,
+      "timestamp": "2025-04-09T23:02:26.636771",
+      "networks": [
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -77,
+          "signal_percent": 46,
+          "auth": "WPA2-Personal",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 18,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -80,
+          "signal_percent": 40,
+          "auth": "WPA2-Enterprise",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 15,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -82,
+          "signal_percent": 35,
+          "auth": "Open",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 13,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -87,
+          "signal_percent": 26,
+          "auth": "WPA2-Enterprise",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 8,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "J_right_lobby_2025-04-09T23:03:33.801613": {
+      "name": "J_right_lobby",
+      "latitude": 23.2098421,
+      "longitude": 72.6855681,
+      "timestamp": "2025-04-09T23:03:33.801613",
+      "networks": [
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -80,
+          "signal_percent": 40,
+          "auth": "WPA2-Enterprise",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 15,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -82,
+          "signal_percent": 35,
+          "auth": "Open",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 13,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -90,
+          "signal_percent": 20,
+          "auth": "WPA2-Personal",
+          "channel": 64,
+          "noise_floor": -95,
+          "snr": 5,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -90,
+          "signal_percent": 20,
+          "auth": "WPA2-Enterprise",
+          "channel": 64,
+          "noise_floor": -95,
+          "snr": 5,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "L_entrance_2025-04-09T23:22:11.110206": {
+      "name": "L_entrance",
+      "latitude": 23.2094584,
+      "longitude": 72.685221,
+      "timestamp": "2025-04-09T23:22:11.110206",
+      "networks": [
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -80,
+          "signal_percent": 40,
+          "auth": "Open",
+          "channel": 64,
+          "noise_floor": -95,
+          "snr": 15,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -85,
+          "signal_percent": 29,
+          "auth": "WPA2-Personal",
+          "channel": 44,
+          "noise_floor": -95,
+          "snr": 10,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -91,
+          "signal_percent": 18,
+          "auth": "WPA2-Enterprise",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 4,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "L_left_lobby_2025-04-09T23:23:29.869482": {
+      "name": "L_left_lobby",
+      "latitude": 23.2092994,
+      "longitude": 72.6850952,
+      "timestamp": "2025-04-09T23:23:29.869482",
+      "networks": [
+        {
+          "ssid": "eduroam",
+          "signal": -77,
+          "signal_percent": 46,
+          "auth": "WPA2-Enterprise",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 18,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -82,
+          "signal_percent": 35,
+          "auth": "WPA2-Personal",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 13,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -85,
+          "signal_percent": 29,
+          "auth": "Open",
+          "channel": 64,
+          "noise_floor": -95,
+          "snr": 10,
+          "samples": 3
+        },
+        {
+          "ssid": "Network type            : Infrastructure",
+          "signal": -85,
+          "signal_percent": 29,
+          "auth": "Open",
+          "channel": 52,
+          "noise_floor": -95,
+          "snr": 10,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -87,
+          "signal_percent": 26,
+          "auth": "WPA2-Enterprise",
+          "channel": 64,
+          "noise_floor": -95,
+          "snr": 8,
+          "samples": 3
+        },
+        {
+          "ssid": "ISTF-Dev",
+          "signal": -88,
+          "signal_percent": 24,
+          "auth": "Open",
+          "channel": 52,
+          "noise_floor": -95,
+          "snr": 7,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "L_right_lobby_2025-04-09T23:25:16.538895": {
+      "name": "L_right_lobby",
+      "latitude": 23.209419,
+      "longitude": 72.6848265,
+      "timestamp": "2025-04-09T23:25:16.538895",
+      "networks": [
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -59,
+          "signal_percent": 82,
+          "auth": "WPA2-Personal",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 36,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -59,
+          "signal_percent": 82,
+          "auth": "WPA2-Enterprise",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 36,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -69,
+          "signal_percent": 62,
+          "auth": "WPA2-Enterprise",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 26,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -78,
+          "signal_percent": 43,
+          "auth": "Open",
+          "channel": 64,
+          "noise_floor": -95,
+          "snr": 17,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "K_right_lobby_2025-04-09T23:28:02.222770": {
+      "name": "K_right_lobby",
+      "latitude": 23.2094887,
+      "longitude": 72.6854754,
+      "timestamp": "2025-04-09T23:28:02.222770",
+      "networks": [
+        {
+          "ssid": "eduroam",
+          "signal": -65,
+          "signal_percent": 70,
+          "auth": "WPA2-Enterprise",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 30,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -77,
+          "signal_percent": 46,
+          "auth": "WPA2-Enterprise",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 18,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -81,
+          "signal_percent": 38,
+          "auth": "Open",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 14,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -82,
+          "signal_percent": 35,
+          "auth": "WPA2-Personal",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 13,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "K_mid_lobby_2025-04-09T23:29:53.057288": {
+      "name": "K_mid_lobby",
+      "latitude": 23.2093505,
+      "longitude": 72.6855864,
+      "timestamp": "2025-04-09T23:29:53.057288",
+      "networks": [
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -78,
+          "signal_percent": 43,
+          "auth": "WPA2-Personal",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 17,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -78,
+          "signal_percent": 43,
+          "auth": "Open",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 17,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -80,
+          "signal_percent": 40,
+          "auth": "WPA2-Enterprise",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 15,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -81,
+          "signal_percent": 38,
+          "auth": "WPA2-Enterprise",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 14,
+          "samples": 3
+        },
+        {
+          "ssid": "Network type            : Infrastructure",
+          "signal": -82,
+          "signal_percent": 35,
+          "auth": "Open",
+          "channel": 52,
+          "noise_floor": -95,
+          "snr": 13,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "K_left_lobby_2025-04-09T23:31:37.399352": {
+      "name": "K_left_lobby",
+      "latitude": 23.2091771,
+      "longitude": 72.6856526,
+      "timestamp": "2025-04-09T23:31:37.399352",
+      "networks": [
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -80,
+          "signal_percent": 40,
+          "auth": "Open",
+          "channel": 64,
+          "noise_floor": -95,
+          "snr": 15,
+          "samples": 3
+        },
+        {
+          "ssid": "ISTF-Dev",
+          "signal": -81,
+          "signal_percent": 38,
+          "auth": "Open",
+          "channel": 52,
+          "noise_floor": -95,
+          "snr": 14,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -82,
+          "signal_percent": 35,
+          "auth": "WPA2-Personal",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 13,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -83,
+          "signal_percent": 33,
+          "auth": "WPA2-Enterprise",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 12,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -88,
+          "signal_percent": 24,
+          "auth": "WPA2-Enterprise",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 7,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "C_left_lobby_2025-04-09T23:36:03.591565": {
+      "name": "C_left_lobby",
+      "latitude": 23.2115782,
+      "longitude": 72.6849596,
+      "timestamp": "2025-04-09T23:36:03.591565",
+      "networks": [
+        {
+          "ssid": "eduroam",
+          "signal": -56,
+          "signal_percent": 87,
+          "auth": "WPA2-Enterprise",
+          "channel": 64,
+          "noise_floor": -95,
+          "snr": 39,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -64,
+          "signal_percent": 72,
+          "auth": "WPA2-Enterprise",
+          "channel": 48,
+          "noise_floor": -95,
+          "snr": 31,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -82,
+          "signal_percent": 35,
+          "auth": "Open",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 13,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -90,
+          "signal_percent": 20,
+          "auth": "WPA2-Personal",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 5,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "C_entrance_2025-04-09T23:37:16.634296": {
+      "name": "C_entrance",
+      "latitude": 23.2108821,
+      "longitude": 72.6850814,
+      "timestamp": "2025-04-09T23:37:16.634296",
+      "networks": [
+        {
+          "ssid": "eduroam",
+          "signal": -63,
+          "signal_percent": 90,
+          "auth": "WPA2-Enterprise",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 31,
+          "samples": 3,
+          "signal_variance": 14
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -66,
+          "signal_percent": 88,
+          "auth": "WPA2-Enterprise",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 29,
+          "samples": 3,
+          "signal_variance": 8
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -67,
+          "signal_percent": 65,
+          "auth": "WPA2-Personal",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 28,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -72,
+          "signal_percent": 60,
+          "auth": "Open",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 23,
+          "samples": 3,
+          "signal_variance": 1
+        },
+        {
+          "ssid": "Network type            : Infrastructure",
+          "signal": -75,
+          "signal_percent": 50,
+          "auth": "Open",
+          "channel": 161,
+          "noise_floor": -95,
+          "snr": 20,
+          "samples": 2
+        },
+        {
+          "ssid": "ISTF-Dev",
+          "signal": -88,
+          "signal_percent": 24,
+          "auth": "Open",
+          "channel": 161,
+          "noise_floor": -95,
+          "snr": 7,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "C_right_lobby_2025-04-09T23:38:34.441398": {
+      "name": "C_right_lobby",
+      "latitude": 23.2107999,
+      "longitude": 72.6852799,
+      "timestamp": "2025-04-09T23:38:34.441398",
+      "networks": [
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -57,
+          "signal_percent": 86,
+          "auth": "WPA2-Enterprise",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 38,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -60,
+          "signal_percent": 80,
+          "auth": "WPA2-Personal",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 35,
+          "samples": 3
+        },
+        {
+          "ssid": "Network type            : Infrastructure",
+          "signal": -75,
+          "signal_percent": 50,
+          "auth": "Open",
+          "channel": 161,
+          "noise_floor": -95,
+          "snr": 20,
+          "samples": 3
+        },
+        {
+          "ssid": "ISTF-Dev",
+          "signal": -88,
+          "signal_percent": 24,
+          "auth": "Open",
+          "channel": 161,
+          "noise_floor": -95,
+          "snr": 7,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -90,
+          "signal_percent": 20,
+          "auth": "Open",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 5,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -90,
+          "signal_percent": 20,
+          "auth": "WPA2-Enterprise",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 5,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "R_mess_left_2025-04-09T23:41:47.347007": {
+      "name": "R_mess_left",
+      "latitude": 23.2109436,
+      "longitude": 72.6855808,
+      "timestamp": "2025-04-09T23:41:47.347007",
+      "networks": [
+        {
+          "ssid": "eduroam",
+          "signal": -75,
+          "signal_percent": 50,
+          "auth": "WPA2-Enterprise",
+          "channel": 64,
+          "noise_floor": -95,
+          "snr": 20,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -81,
+          "signal_percent": 38,
+          "auth": "Open",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 14,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -87,
+          "signal_percent": 26,
+          "auth": "WPA2-Enterprise",
+          "channel": 149,
+          "noise_floor": -95,
+          "snr": 8,
+          "samples": 3
+        },
+        {
+          "ssid": "JioAirfiberA6",
+          "signal": -89,
+          "signal_percent": 22,
+          "auth": "WPA2-Personal",
+          "channel": 100,
+          "noise_floor": -95,
+          "snr": 6,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "R_mess_right_2025-04-09T23:43:14.970009": {
+      "name": "R_mess_right",
+      "latitude": 23.2109331,
+      "longitude": 72.6856913,
+      "timestamp": "2025-04-09T23:43:14.970009",
+      "networks": [
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -69,
+          "signal_percent": 62,
+          "auth": "Open",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 26,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -87,
+          "signal_percent": 26,
+          "auth": "WPA2-Enterprise",
+          "channel": 64,
+          "noise_floor": -95,
+          "snr": 8,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -88,
+          "signal_percent": 24,
+          "auth": "WPA2-Enterprise",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 7,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -88,
+          "signal_percent": 24,
+          "auth": "WPA2-Personal",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 7,
+          "samples": 3
+        },
+        {
+          "ssid": "JioAirfiberA6",
+          "signal": -89,
+          "signal_percent": 22,
+          "auth": "WPA2-Personal",
+          "channel": 100,
+          "noise_floor": -95,
+          "snr": 6,
+          "samples": 1
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "D_left_lobby_2025-04-09T23:47:13.994994": {
+      "name": "D_left_lobby",
+      "latitude": 23.2103506,
+      "longitude": 72.6852528,
+      "timestamp": "2025-04-09T23:47:13.994994",
+      "networks": [
+        {
+          "ssid": "IITGN-EXAM",
+          "signal": -54,
+          "signal_percent": 91,
+          "auth": "WPA2-Personal",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 41,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -57,
+          "signal_percent": 86,
+          "auth": "Open",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 38,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -58,
+          "signal_percent": 83,
+          "auth": "WPA2-Enterprise",
+          "channel": 64,
+          "noise_floor": -95,
+          "snr": 37,
+          "samples": 3
+        },
+        {
+          "ssid": "Spyder \ud83d\udd77\ufe0f",
+          "signal": -65,
+          "signal_percent": 70,
+          "auth": "WPA2-Personal",
+          "channel": 3,
+          "noise_floor": -95,
+          "snr": 30,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -66,
+          "signal_percent": 67,
+          "auth": "WPA2-Enterprise",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 29,
+          "samples": 3
+        },
+        {
+          "ssid": "Network type            : Infrastructure",
+          "signal": -69,
+          "signal_percent": 62,
+          "auth": "Open",
+          "channel": 64,
+          "noise_floor": -95,
+          "snr": 26,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
+    },
+  "metadata": {
+    "created": "2025-04-09T23:49:15.528532",
+    "last_updated": "2025-04-10T00:53:15.398522",
+    "version": "1.0"
+  }
+}
