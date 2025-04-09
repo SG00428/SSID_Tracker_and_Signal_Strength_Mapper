@@ -10,9 +10,95 @@ from datetime import datetime
 
 app = Flask(__name__)
 
+# File to store WiFi data persistently
+DATA_FILE = 'wifi_data.json'
+
 # Store WiFi data by location
 wifi_locations = {}
 signal_history = {}
+
+# Function to load existing data from file
+def load_existing_data():
+    """Load existing data from the JSON file if it exists."""
+    try:
+        if os.path.exists(DATA_FILE):
+            with open(DATA_FILE, 'r') as file:
+                data = json.load(file)
+                # Extract locations data
+                if "locations" in data:
+                    for location_key, location_data in data["locations"].items():
+                        if "networks" in location_data:
+                            # Format may be slightly different, adapt as needed
+                            coords = f"{location_data.get('latitude'):.6f},{location_data.get('longitude'):.6f}"
+                            wifi_locations[coords] = location_data["networks"]
+                
+                # Update signal history if available
+                if "signal_history" in data:
+                    signal_history.update(data["signal_history"])
+                
+                print(f"Loaded {len(wifi_locations)} locations from {DATA_FILE}")
+    except Exception as e:
+        print(f"Error loading existing data: {str(e)}")
+
+# Function to save current data to file
+def save_data_to_file():
+    """Save the current WiFi data to the JSON file."""
+    try:
+        # Structure the data - combines existing data
+        data = {
+            "locations": {},
+            "metadata": {
+                "last_updated": datetime.now().isoformat(),
+                "version": "1.1"
+            }
+        }
+        
+        # Load existing data if file exists
+        try:
+            if os.path.exists(DATA_FILE):
+                with open(DATA_FILE, 'r') as file:
+                    existing_data = json.load(file)
+                    data["locations"] = existing_data.get("locations", {})
+                    # Keep the original creation date if available
+                    if "metadata" in existing_data and "created" in existing_data["metadata"]:
+                        data["metadata"]["created"] = existing_data["metadata"]["created"]
+                    else:
+                        data["metadata"]["created"] = datetime.now().isoformat()
+        except:
+            data["metadata"]["created"] = datetime.now().isoformat()
+        
+        # Update with new data from memory
+        for location_key, networks in wifi_locations.items():
+            # Parse lat/lon from the key
+            try:
+                lat, lon = location_key.split(',')
+                timestamp = datetime.now().isoformat()
+                location_name = f"Location_{timestamp}"
+                
+                # Create a unique location entry
+                data["locations"][f"{location_name}_{timestamp}"] = {
+                    "name": location_name,
+                    "latitude": float(lat),
+                    "longitude": float(lon),
+                    "timestamp": timestamp,
+                    "networks": networks,
+                    "note": ""
+                }
+            except:
+                # Skip locations with invalid keys
+                continue
+        
+        # Add signal history
+        data["signal_history"] = signal_history
+        
+        with open(DATA_FILE, 'w') as file:
+            json.dump(data, file, indent=2)
+        
+        print(f"Data saved to {DATA_FILE}")
+        return True
+    except Exception as e:
+        print(f"Error saving data: {str(e)}")
+        return False
 
 # Improved function to get WiFi SSIDs and signal strength with shorter scan times
 def get_wifi_networks(samples=1, delay=0.2):
@@ -253,6 +339,9 @@ def get_wifi():
         if len(signal_history[ssid]) > 5:  # Reduced history length
             signal_history[ssid].pop(0)
     
+    # Save data to file after each scan
+    save_data_to_file()
+    
     return jsonify({
         "latitude": latitude, 
         "longitude": longitude, 
@@ -275,12 +364,25 @@ def get_all_wifi():
 @app.route('/get_data_for_download', methods=['GET'])
 def get_data_for_download():
     """Return all collected WiFi data for download as JSON"""
-    data = {
-        "locations": wifi_locations,
-        "history": signal_history,
-        "timestamp": datetime.now().isoformat()
-    }
+    # Make sure to save the latest data
+    save_data_to_file()
+    
+    # Load the complete data from file to ensure we have everything
+    try:
+        with open(DATA_FILE, 'r') as file:
+            data = json.load(file)
+    except:
+        # If loading fails, use the in-memory data
+        data = {
+            "locations": wifi_locations,
+            "history": signal_history,
+            "timestamp": datetime.now().isoformat()
+        }
+    
     return jsonify(data)
+
+# Load existing data when the app starts
+load_existing_data()
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
