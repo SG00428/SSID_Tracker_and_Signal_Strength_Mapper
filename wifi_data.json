@@ -3241,8 +3241,7 @@
         }
       ],
       "note": "Auto-detected location: Browser-based geolocation"
-    }
-  },
+    },
     "D_mid_lobby_2025-04-09T23:49:15.528532": {
       "name": "D_mid_lobby",
       "latitude": 23.210373,
@@ -5153,4 +5152,5 @@
     "last_updated": "2025-04-10T00:53:15.398522",
     "version": "1.0"
   }
+}
 }

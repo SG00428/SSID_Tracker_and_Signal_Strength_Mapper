@@ -391,15 +391,12 @@
         // Function to perform a manual WiFi scan
         function performWiFiScan(lat, lng) {
             const scanStatus = document.getElementById('scan-status');
-            scanStatus.innerHTML = '<div class="loading-indicator"></div>Scanning...';
+            scanStatus.innerHTML = '<div class="loading-indicator"></div>Loading nearby data...';
             
             // Remove previous marker if exists
             if (currentMarker) {
                 map.removeLayer(currentMarker);
             }
-            
-            // Get samples count from selection
-            const samples = parseInt(document.getElementById('scan-samples').value);
             
             fetch('/get_wifi', {
                 method: 'POST',
@@ -408,31 +405,31 @@
                 },
                 body: JSON.stringify({ 
                     lat: lat, 
-                    lon: lng,
-                    samples: samples
+                    lon: lng
                 }),
             })
             .then(response => response.json())
             .then(data => {
-                console.log("Received WiFi data:", data);
-                scanStatus.textContent = `Scan complete! Found ${data.wifi.length} networks`;
-                
-                // Filter networks if filter is set
-                const filterText = document.getElementById('filter-ssid').value.toLowerCase();
-                let filteredNetworks = data.wifi;
-                if (filterText) {
-                    filteredNetworks = data.wifi.filter(network => 
-                        network.ssid.toLowerCase().includes(filterText));
+                // Update status based on whether we found stored data
+                if (data.is_stored_data) {
+                    scanStatus.textContent = `Found stored data with ${data.wifi.length} networks nearby`;
+                    // Update marker position to stored location
+                    lat = data.latitude;
+                    lng = data.longitude;
+                } else {
+                    scanStatus.textContent = data.message || 'No data found nearby';
+                    return;  // Exit if no data found
                 }
                 
+                // Rest of your existing code for displaying networks...
                 // Create network details content
                 const networkDetails = document.getElementById('network-details');
                 
-                if (!filteredNetworks || filteredNetworks.length === 0) {
+                if (!data.wifi || data.wifi.length === 0) {
                     networkDetails.innerHTML = '<p>No WiFi networks found</p>';
                 } else {
-                    networkDetails.innerHTML = `<p>Found ${filteredNetworks.length} networks:</p><div class="wifi-list">` + 
-                        filteredNetworks.map(network => {
+                    networkDetails.innerHTML = `<p>Found ${data.wifi.length} networks:</p><div class="wifi-list">` + 
+                        data.wifi.map(network => {
                             const signalClass = getSignalClass(network.signal);
                             const authClass = getAuthClass(network.auth);
                             const snrClass = getSnrClass(network.snr);
@@ -466,13 +463,18 @@
                 }
                 
                 // Create popup content
-                var popupContent = '<div class="wifi-list"><h4>WiFi Networks</h4>';
-                if (filteredNetworks.length === 0) {
+                var popupContent = '<div class="wifi-list">';
+                if (data.is_stored_data) {
+                    popupContent += '<h4>Stored WiFi Data</h4>';
+                } else {
+                    popupContent += '<h4>WiFi Networks</h4>';
+                }
+                if (data.wifi.length === 0) {
                     popupContent += '<p>No WiFi networks found</p>';
                 } else {
-                    popupContent += `<p>Found ${filteredNetworks.length} networks</p>`;
-                    if (filteredNetworks.length > 0) {
-                        const topNetwork = filteredNetworks[0]; // Strongest signal
+                    popupContent += `<p>Found ${data.wifi.length} networks</p>`;
+                    if (data.wifi.length > 0) {
+                        const topNetwork = data.wifi[0]; // Strongest signal
                         const snrClass = getSnrClass(topNetwork.snr);
                         popupContent += `<p>
                             Strongest: <strong>${topNetwork.ssid}</strong> 
@@ -483,8 +485,8 @@
                 popupContent += '</div>';
                 
                 // Create new marker with signal strength color
-                const bestSignal = filteredNetworks.length > 0 ? 
-                    Math.max(...filteredNetworks.map(n => n.signal)) : -100;
+                const bestSignal = data.wifi.length > 0 ? 
+                    Math.max(...data.wifi.map(n => n.signal)) : -100;
                 const markerColor = getSignalColor(bestSignal);
                 
                 // Custom marker icon with signal strength color
@@ -522,7 +524,7 @@
             })
             .catch(error => {
                 console.error('Error:', error);
-                scanStatus.textContent = 'Scan failed!';
+                scanStatus.textContent = 'Error loading data';
             });
         }
         
@@ -741,6 +743,26 @@
             // Use the common function for WiFi scanning
             performWiFiScan(lat, lng);
         });
+
+        // Add this after your map initialization code
+        function showStoredLocations() {
+            fetch('/get_all_locations')
+                .then(response => response.json())
+                .then(data => {
+                    data.locations.forEach(location => {
+                        // Create small dot markers for stored locations
+                        L.circleMarker([location.latitude, location.longitude], {
+                            radius: 3,
+                            color: '#666',
+                            fillColor: '#666',
+                            fillOpacity: 0.7
+                        }).addTo(map);
+                    });
+                });
+        }
+
+        // Call this when the map loads
+        showStoredLocations();
     </script>
 </body>
 </html>
