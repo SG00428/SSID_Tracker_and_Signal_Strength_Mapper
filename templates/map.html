@@ -186,7 +186,6 @@
         <div class="header">
             <h1>WiFi Signal Mapping</h1>
         </div>
-        ]
         <div class="content">
             <div class="map-container">
                 <div id="map"></div>
@@ -218,6 +217,18 @@
             
             <div class="sidebar">
                 <div class="control-panel">
+                    <h3>Current Location Networks</h3>
+                    <div id="network-details">
+                        <p>Click on the map to see WiFi networks at that location</p>
+                    </div>
+                    <div id="signal-chart-container" style="display: none;">
+                        <canvas id="signal-chart"></canvas>
+                    </div>
+                    <!-- Add a download button specifically for the current location -->
+                    <button id="download-location-data" style="display: none; margin-top: 15px;">Download The Location's Data</button>
+                </div>
+                
+                <div class="control-panel" style="display: none;">
                     <h3>Scan Options</h3>
                     <div class="scan-options">
                         <div class="option-group">
@@ -238,22 +249,12 @@
                     <span id="scan-status"></span>
                 </div>
                 
-                <div class="control-panel">
+                <div class="control-panel" style="display: none;">
                     <h3>Tracked WiFi Networks</h3>
                     <div id="tracked-ssids">Loading...</div>
                 </div>
                 
-                <div class="control-panel">
-                    <h3>Current Location Networks</h3>
-                    <div id="network-details">
-                        <p>Click on the map to see WiFi networks at that location</p>
-                    </div>
-                    <div id="signal-chart-container" style="display: none;">
-                        <canvas id="signal-chart"></canvas>
-                    </div>
-                </div>
-                
-                <div class="control-panel">
+                <div class="control-panel" style="display: none;">
                     <h3>Data Management</h3>
                     <button id="save-data">Save Data to File</button>
                     <div id="data-status"></div>
@@ -274,11 +275,11 @@
         
         // IIT Gandhinagar campus boundary coordinates
         var campusBoundary = [
-            [23.215405, 72.681315],
-            [23.216841, 72.689125],
-            [23.205183, 72.691174],
-            [23.202838, 72.683541]
-        ];
+        [23.215729, 72.685175],
+        [23.213490, 72.689289],
+        [23.208555, 72.686433],
+        [23.208569, 72.683304],
+        [23.213503, 72.683176]];
 
         // Draw campus boundary polygon
         var polygon = L.polygon(campusBoundary, {color: 'blue', fillOpacity: 0.2}).addTo(map);
@@ -292,6 +293,7 @@
         var heatmapLayer = null;
         var signalChart = null;
         var selectedSSID = null;
+        var currentLocationData = null;
         
         // Function to check if a point is inside the polygon
         function isPointInPolygon(point, polygon) {
@@ -508,6 +510,18 @@
                     timestamp: data.timestamp
                 };
                 dataPoints.push(newDataPoint);
+                
+                // Store the current location data for download
+                currentLocationData = {
+                    latitude: lat,
+                    longitude: lng,
+                    timestamp: data.timestamp,
+                    wifi_networks: data.wifi,
+                    is_stored_data: data.is_stored_data || false
+                };
+                
+                // Show the download button now that we have data
+                document.getElementById('download-location-data').style.display = 'block';
                 
                 // Update heatmap if enabled
                 if (document.getElementById('toggle-heatmap').checked) {
@@ -763,6 +777,41 @@
 
         // Call this when the map loads
         showStoredLocations();
+
+        // Add handler for download location data button
+        document.getElementById('download-location-data').addEventListener('click', function() {
+            if (!currentLocationData) {
+                alert("No location data available. Please click on a location first.");
+                return;
+            }
+            
+            // Create a JSON string with pretty formatting
+            const jsonData = JSON.stringify(currentLocationData, null, 2);
+            
+            // Create a Blob containing the data
+            const blob = new Blob([jsonData], { type: 'application/json' });
+            
+            // Create an object URL for the blob
+            const url = URL.createObjectURL(blob);
+            
+            // Format coordinates for the filename
+            const lat = currentLocationData.latitude.toFixed(6);
+            const lng = currentLocationData.longitude.toFixed(6);
+            const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+            
+            // Create a download link with coordinates in the filename
+            const downloadLink = document.createElement('a');
+            downloadLink.href = url;
+            downloadLink.download = `wifi_data_${lat}_${lng}_${timestamp}.json`;
+            
+            // Add the link to the document, click it, then remove it
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+            
+            // Release the object URL
+            URL.revokeObjectURL(url);
+        });
     </script>
 </body>
 </html>
