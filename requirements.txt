@@ -1,7 +1,5 @@
 flask==2.0.1
 shapely==1.8.0
 
-Flask==2.2.5
-Werkzeug==2.2.3
-gunicorn
+
 
