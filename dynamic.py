@@ -12,13 +12,172 @@ import urllib.request
 import socket
 import webbrowser
 import math
+import threading
 from threading import Event
+
+# Import Flask components
+from flask import Flask, render_template, request, jsonify
 
 # File where data will be stored
 DATA_FILE = 'dynamic_data.json'
 
 # Distance threshold in degrees (~10 meters)
 LOCATION_THRESHOLD = 0.0001
+
+# Flask app
+app = None
+webapp_thread = None
+
+def start_webapp(host='0.0.0.0', port=5000, debug=False, use_reloader=False):
+    """Start the Flask web application in a separate thread"""
+    global app
+    
+    # Initialize Flask app if not already done
+    if app is None:
+        app = Flask(__name__)
+        
+        @app.route('/')
+        def index():
+            return render_template('map.html')
+        
+        @app.route('/get_wifi', methods=['POST'])
+        def get_wifi():
+            """Return WiFi data for nearest stored location"""
+            data = request.json
+            latitude = float(data.get('lat'))
+            longitude = float(data.get('lon'))
+            
+            # Find nearest stored location
+            nearest_location = find_nearest_location(latitude, longitude)
+            
+            if nearest_location:
+                # Use stored data
+                location_data = nearest_location["location_data"]
+                wifi_networks = location_data["networks"]
+                
+                return jsonify({
+                    "latitude": location_data["latitude"], 
+                    "longitude": location_data["longitude"],
+                    "wifi": wifi_networks,
+                    "timestamp": location_data["timestamp"],
+                    "is_stored_data": True
+                })
+            
+            return jsonify({
+                "latitude": latitude,
+                "longitude": longitude,
+                "wifi": [],
+                "timestamp": datetime.now().isoformat(),
+                "is_stored_data": False,
+                "message": "No stored data found nearby"
+            })
+        
+        @app.route('/get_all_wifi', methods=['GET'])
+        def get_all_wifi():
+            """Return all unique SSIDs and their signal strength ranges"""
+            data = load_existing_data()
+            ssid_data = {}
+            
+            for location_key, location_data in data["locations"].items():
+                for network in location_data.get("networks", []):
+                    ssid = network.get("ssid")
+                    if not ssid:
+                        continue
+                    
+                    signal = network.get("signal", 0)
+                    
+                    if ssid not in ssid_data:
+                        ssid_data[ssid] = {
+                            "ssid": ssid,
+                            "min_signal": signal,
+                            "max_signal": signal,
+                            "locations": 1
+                        }
+                    else:
+                        ssid_data[ssid]["min_signal"] = min(ssid_data[ssid]["min_signal"], signal)
+                        ssid_data[ssid]["max_signal"] = max(ssid_data[ssid]["max_signal"], signal)
+                        ssid_data[ssid]["locations"] += 1
+            
+            networks = list(ssid_data.values())
+            return jsonify({
+                "networks": networks
+            })
+        
+        @app.route('/get_data_for_download', methods=['GET'])
+        def get_data_for_download():
+            """Return all collected WiFi data for download as JSON"""
+            try:
+                with open(DATA_FILE, 'r') as file:
+                    data = json.load(file)
+            except Exception as e:
+                data = {
+                    "error": str(e),
+                    "timestamp": datetime.now().isoformat()
+                }
+            
+            return jsonify(data)
+        
+        @app.route('/get_all_locations', methods=['GET'])
+        def get_all_locations():
+            """Return all stored location coordinates"""
+            locations = []
+            try:
+                with open(DATA_FILE, 'r') as file:
+                    data = json.load(file)
+                    for loc_key, loc_data in data["locations"].items():
+                        if "latitude" in loc_data and "longitude" in loc_data:
+                            locations.append({
+                                "latitude": loc_data["latitude"],
+                                "longitude": loc_data["longitude"],
+                                "name": loc_data["name"]
+                            })
+            except Exception as e:
+                print(f"Error loading locations: {e}")
+            
+            return jsonify({"locations": locations})
+    
+    # Create and start the server in a new thread
+    def run_webapp():
+        app.run(host=host, port=port, debug=debug, use_reloader=use_reloader)
+    
+    webapp_thread = threading.Thread(target=run_webapp)
+    webapp_thread.daemon = True
+    webapp_thread.start()
+    
+    print(f"\nWeb interface started at http://{host}:{port}")
+    print("Open this URL in your browser to view WiFi data on a map")
+    
+    # Try to open the browser automatically
+    try:
+        webbrowser.open(f"http://127.0.0.1:{port}")
+    except:
+        pass
+
+def find_nearest_location(target_lat, target_lon, max_distance=0.001):
+    """Find the nearest stored location within max_distance."""
+    data = load_existing_data()
+    nearest = None
+    min_dist = float('inf')
+    
+    for location_key, location_data in data["locations"].items():
+        lat = location_data.get("latitude")
+        lon = location_data.get("longitude")
+        
+        if lat is None or lon is None:
+            continue
+            
+        # Calculate distance
+        dist = calculate_distance(lat, lon, target_lat, target_lon)
+        
+        if dist < min_dist and dist < 100:  # Max 100 meters
+            min_dist = dist
+            nearest = {
+                "key": location_key,
+                "distance": dist,
+                "location_data": location_data
+            }
+    
+    return nearest
 
 def calculate_distance(lat1, lon1, lat2, lon2):
     """Calculate distance between two coordinates in meters"""
@@ -33,7 +192,6 @@ def calculate_distance(lat1, lon1, lat2, lon2):
         math.sin(Δλ/2) * math.sin(Δλ/2)
     c = 2 * math.atan2(math.sqrt(a), math.sqrt(1-a))
     return R * c
-
 
 def dynamic_wifi_collection(interval=10, duration=None, stop_event=None):
     """
@@ -128,44 +286,27 @@ def dynamic_wifi_collection(interval=10, duration=None, stop_event=None):
     print(f"\nCollection completed: {scan_count} scans performed")
     return scan_count
 
-# Function to get WiFi SSIDs and signal strength with configurable samples
 def get_wifi_networks(samples=3, delay=0.2):
     all_samples = []
     
     for _ in range(samples):
-        # Get a single scan
         networks = get_single_wifi_scan()
         if networks:
             all_samples.append(networks)
-        # Wait between scans
         time.sleep(delay)
     
-    # Aggregate results from all samples
     return aggregate_wifi_samples(all_samples)
 
 def get_single_wifi_scan():
     wifi_data = []
     os_type = platform.system()
     
-    # Try to get noise floor (varies by system)
-    noise_floor = -95  # Default noise floor estimation in dBm
+    noise_floor = -95
 
     if os_type == "Windows":
         try:
-            # Quick adapter refresh
             subprocess.run("netsh wlan show networks mode=bssid", shell=True, stderr=subprocess.DEVNULL)
-            
-            # Get detailed info about all networks
             output = subprocess.check_output("netsh wlan show networks mode=bssid", shell=True).decode()
-            
-            # Try to get adapter info for noise floor (might not be available)
-            try:
-                adapter_info = subprocess.check_output("netsh wlan show interfaces", shell=True).decode()
-                # If available, we might find noise floor or use RSSI to estimate it
-            except:
-                pass
-            
-            # Parse the output to extract SSIDs and signal strength
             ssid_blocks = re.split(r"SSID \d+ : ", output)[1:]  
             
             for block in ssid_blocks:
@@ -177,28 +318,17 @@ def get_single_wifi_scan():
                 if not ssid:
                     continue
                     
-                # Find signal strength
                 signal_match = re.search(r"Signal\s*:\s*(\d+)%", block)
-                # Extract authentication type
                 auth_match = re.search(r"Authentication\s*:\s*(\S+)", block)
-                # Extract channel
                 channel_match = re.search(r"Channel\s*:\s*(\d+)", block)
                 
                 if signal_match:
                     signal_percent = int(signal_match.group(1))
-                    # Simple conversion formula: 100% = -50dBm, 0% = -100dBm
                     signal_dbm = int((signal_percent / 2) - 100)
-                    
-                    # Calculate SNR (Signal-to-Noise Ratio)
                     snr = signal_dbm - noise_floor
-                    
-                    # Get authentication type
                     auth_type = auth_match.group(1) if auth_match else "Unknown"
-                    
-                    # Get channel
                     channel = int(channel_match.group(1)) if channel_match else 0
                     
-                    # Add this network to our list
                     wifi_data.append({
                         "ssid": ssid, 
                         "signal": signal_dbm,
@@ -216,11 +346,9 @@ def get_single_wifi_scan():
 
     elif os_type == "Linux":
         try:
-            # Try to use iwlist for Linux
             interfaces = subprocess.check_output(["ls", "/sys/class/net"]).decode().split()
             wifi_interface = None
             
-            # Find the first wireless interface
             for interface in interfaces:
                 try:
                     output = subprocess.check_output(["iwconfig", interface], stderr=subprocess.DEVNULL).decode()
@@ -231,7 +359,6 @@ def get_single_wifi_scan():
                     continue
             
             if wifi_interface:
-                # Try to get noise floor from iw survey
                 try:
                     survey_output = subprocess.check_output(["iw", "dev", wifi_interface, "survey", "dump"], stderr=subprocess.DEVNULL).decode()
                     noise_match = re.search(r"noise:\s*(-\d+)", survey_output)
@@ -246,23 +373,15 @@ def get_single_wifi_scan():
                 for section in network_sections:
                     ssid_match = re.search(r'ESSID:"(.*?)"', section)
                     signal_match = re.search(r"Signal level=(-?\d+) dBm", section)
-                    # Extract channel
                     channel_match = re.search(r"Channel:(\d+)", section)
-                    # Extract encryption
                     encryption_match = re.search(r"Encryption key:(on|off)", section)
                     auth_match = re.search(r"IE: (?:WPA|IEEE 802.11i/WPA2|WPA2) Version \d+", section)
                     
                     if ssid_match and signal_match:
                         ssid = ssid_match.group(1)
                         signal_dbm = int(signal_match.group(1))
-                        
-                        # Calculate SNR
                         snr = signal_dbm - noise_floor
-                        
-                        # Get channel
                         channel = int(channel_match.group(1)) if channel_match else 0
-                        
-                        # Determine authentication type
                         auth_type = "Open"
                         if encryption_match and encryption_match.group(1) == "on":
                             if auth_match:
@@ -273,7 +392,6 @@ def get_single_wifi_scan():
                             else:
                                 auth_type = "WEP"
                         
-                        # Calculate approximate percentage
                         signal_percent = max(0, min(100, 2 * (signal_dbm + 100)))
                         
                         wifi_data.append({
@@ -294,11 +412,9 @@ def aggregate_wifi_samples(samples):
     if not samples:
         return []
     
-    # If only one sample, return it directly
     if len(samples) == 1:
         return sorted(samples[0], key=lambda n: n["signal"], reverse=True)
     
-    # Combine samples for better accuracy
     networks_by_ssid = {}
     
     for sample in samples:
@@ -308,16 +424,13 @@ def aggregate_wifi_samples(samples):
                 networks_by_ssid[ssid] = []
             networks_by_ssid[ssid].append(network)
     
-    # Create the final list with averaged values
     result = []
     for ssid, networks in networks_by_ssid.items():
-        # Average signal strength
         signal_values = [n["signal"] for n in networks]
         snr_values = [n["snr"] for n in networks]
         avg_signal = int(statistics.mean(signal_values))
         avg_snr = int(statistics.mean(snr_values))
         
-        # Calculate signal variance if we have multiple samples
         signal_variance = None
         if len(signal_values) > 1:
             try:
@@ -325,10 +438,8 @@ def aggregate_wifi_samples(samples):
             except:
                 pass
         
-        # Get other fields from the strongest sample
         strongest = max(networks, key=lambda n: n["signal"])
         
-        # Add to result with combined data
         network_data = {
             "ssid": ssid,
             "signal": avg_signal,
@@ -340,17 +451,14 @@ def aggregate_wifi_samples(samples):
             "samples": len(networks)
         }
         
-        # Add variance if available
         if signal_variance:
             network_data["signal_variance"] = signal_variance
         
         result.append(network_data)
     
-    # Sort by signal strength
     return sorted(result, key=lambda n: n["signal"], reverse=True)
 
 def load_existing_data():
-    """Load existing data from the JSON file if it exists."""
     try:
         if os.path.exists(DATA_FILE):
             with open(DATA_FILE, 'r') as file:
@@ -358,7 +466,6 @@ def load_existing_data():
     except Exception as e:
         print(f"Error loading existing data: {e}")
     
-    # Return default structure if file doesn't exist or has issues
     return {
         "locations": {},
         "metadata": {
@@ -369,8 +476,6 @@ def load_existing_data():
     }
 
 def save_data(data_obj):
-    """Save the data to the JSON file."""
-    # Update the last_updated timestamp
     data_obj["metadata"]["last_updated"] = datetime.now().isoformat()
     
     try:
@@ -380,7 +485,6 @@ def save_data(data_obj):
     except Exception as e:
         print(f"Error saving data: {e}")
 
-# Define known locations for easy reference
 KNOWN_LOCATIONS = {
     "library": {"latitude": 23.2120, "longitude": 72.6868, "description": "Main Library Building"},
     "academic_block": {"latitude": 23.2106, "longitude": 72.6845, "description": "Academic Block"},
@@ -392,60 +496,49 @@ KNOWN_LOCATIONS = {
 }
 
 def get_known_location(location_name):
-    """Check if the location is in our predefined list."""
     if not location_name:
         return None, None, None
     
-    # Convert to lowercase and replace spaces with underscores for matching
     location_key = location_name.lower().replace(' ', '_')
     
-    # Try direct match first
     if location_key in KNOWN_LOCATIONS:
         loc = KNOWN_LOCATIONS[location_key]
         return loc["latitude"], loc["longitude"], loc["description"]
     
-    # Try partial match
     for key, loc in KNOWN_LOCATIONS.items():
         if key in location_key or location_key in key:
             print(f"Using known location: {key} ({loc['description']})")
             return loc["latitude"], loc["longitude"], loc["description"]
     
-    # No match found
     return None, None, None
 
 def list_known_locations():
-    """Print a list of known locations."""
     print("\nKnown locations:")
     for key, loc in KNOWN_LOCATIONS.items():
         print(f"  {key}: {loc['description']} ({loc['latitude']}, {loc['longitude']})")
     print()
 
 def get_current_location():
-    """Try to determine the current device location without using external libraries."""
     try:
         print("Attempting to determine your current location...")
-        # Try to get public IP-based location (not very accurate but a fallback)
         try:
-            # Using urllib instead of requests
             with urllib.request.urlopen('https://ipinfo.io/json', timeout=5) as response:
                 data = json.loads(response.read().decode())
                 if 'loc' in data:
                     lat, lon = map(float, data['loc'].split(','))
                     print(f"Location detected: {lat}, {lon} (approximate based on IP)")
-                    return lat, lon, f"IP-based location: {data.get('city', ''), {data.get('region', '')}}"
+                    return lat, lon, f"IP-based location: {data.get('city', '')}, {data.get('region', '')}"
         except Exception as e:
             print(f"Error determining location via IP: {e}")
             
-        # Rest of the browser-based approach remains the same
         import http.server
         import threading
         import time
         import urllib.parse
         
-        location_data = {'lat': None, 'lon': None}
+        location_data = {'lat': None, 'lon': None, 'accuracy': None}
         server_port = 8000
         
-        # Find an available port
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         while True:
             try:
@@ -454,7 +547,7 @@ def get_current_location():
                 break
             except:
                 server_port += 1
-                if server_port > 9000:  # Limit the search
+                if server_port > 9000:
                     raise Exception("No available ports found")
         
         class LocationHandler(http.server.BaseHTTPRequestHandler):
@@ -466,6 +559,8 @@ def get_current_location():
                     if 'lat' in params and 'lon' in params:
                         location_data['lat'] = float(params['lat'])
                         location_data['lon'] = float(params['lon'])
+                        if 'accuracy' in params:
+                            location_data['accuracy'] = float(params['accuracy'])
                         
                     self.send_response(200)
                     self.send_header('Content-type', 'text/html')
@@ -483,8 +578,14 @@ def get_current_location():
                         <script>
                         function getLocation() {
                             if (navigator.geolocation) {
-                                navigator.geolocation.getCurrentPosition(showPosition, showError);
-                                document.getElementById('status').innerHTML = "Getting your location...";
+                                // Request high accuracy
+                                const options = {
+                                    enableHighAccuracy: true,
+                                    timeout: 15000,
+                                    maximumAge: 0
+                                };
+                                navigator.geolocation.getCurrentPosition(showPosition, showError, options);
+                                document.getElementById('status').innerHTML = "Getting your location with high accuracy...";
                             } else {
                                 document.getElementById('status').innerHTML = "Geolocation is not supported by this browser.";
                             }
@@ -493,11 +594,13 @@ def get_current_location():
                         function showPosition(position) {
                             var lat = position.coords.latitude;
                             var lon = position.coords.longitude;
-                            document.getElementById('status').innerHTML = 
-                                "Location detected: " + lat + ", " + lon;
+                            var accuracy = position.coords.accuracy;
                             
-                            // Send location back to server
-                            window.location.href = "/setlocation?lat=" + lat + "&lon=" + lon;
+                            document.getElementById('status').innerHTML = 
+                                "Location detected: " + lat + ", " + lon + "<br>Accuracy: " + 
+                                accuracy + " meters";
+                            
+                            window.location.href = "/setlocation?lat=" + lat + "&lon=" + lon + "&accuracy=" + accuracy;
                         }
                         
                         function showError(error) {
@@ -517,13 +620,18 @@ def get_current_location():
                             }
                         }
                         
-                        // Run when page loads
                         window.onload = getLocation;
                         </script>
                     </head>
                     <body>
                         <h1>WiFi Data Collector - Location Permission</h1>
                         <p>To collect accurate location data, please allow location access when prompted.</p>
+                        <p>For best results:</p>
+                        <ul>
+                            <li>Use a device with GPS</li>
+                            <li>Enable WiFi and Bluetooth for better indoor accuracy</li>
+                            <li>If using a mobile device, grant precise location permission</li>
+                        </ul>
                         <p id="status">Waiting for location permission...</p>
                         <button onclick="getLocation()">Try Again</button>
                     </body>
@@ -532,33 +640,31 @@ def get_current_location():
                     self.wfile.write(html.encode())
                     
             def log_message(self, format, *args):
-                # Suppress log messages
                 return
         
-        # Start HTTP server in a separate thread
         server = http.server.HTTPServer(('', server_port), LocationHandler)
         thread = threading.Thread(target=server.serve_forever)
         thread.daemon = True
         thread.start()
         
-        # Open browser to get user permission for location
         webbrowser.open(f'http://localhost:{server_port}')
         print(f"A browser window has been opened to request your location.")
         print("Please allow location access when prompted.")
+        print("For best results, use a device with GPS and enable WiFi/Bluetooth.")
         
-        # Wait for location data with timeout
-        timeout = 60  # seconds
+        timeout = 60
         start_time = time.time()
         while location_data['lat'] is None and time.time() - start_time < timeout:
             time.sleep(1)
         
-        # Shutdown server
         server.shutdown()
         thread.join()
         
         if location_data['lat'] is not None and location_data['lon'] is not None:
-            print(f"Location detected: {location_data['lat']}, {location_data['lon']}")
-            return location_data['lat'], location_data['lon'], "Browser-based geolocation"
+            accuracy_msg = f", accuracy: {location_data['accuracy']} meters" if location_data['accuracy'] else ""
+            print(f"Location detected: {location_data['lat']}, {location_data['lon']}{accuracy_msg}")
+            accuracy_desc = f" (accuracy: {location_data['accuracy']:.1f}m)" if location_data['accuracy'] else ""
+            return location_data['lat'], location_data['lon'], f"Browser-based geolocation{accuracy_desc}"
             
     except Exception as e:
         print(f"Error determining location via browser: {e}")
@@ -566,10 +672,8 @@ def get_current_location():
     return None, None, None
 
 def collect_wifi_data(location_name=None, latitude=None, longitude=None, samples=3, note=None):
-    """Collect wifi data at the current location and save to JSON file."""
     print(f"Collecting WiFi data with {samples} samples...")
     
-    # Always try to auto-detect location first instead of relying on predefined locations
     auto_lat, auto_lon, auto_desc = get_current_location()
     
     if auto_lat and auto_lon:
@@ -579,7 +683,6 @@ def collect_wifi_data(location_name=None, latitude=None, longitude=None, samples
         if note is None and auto_desc:
             note = f"Auto-detected location: {auto_desc}"
     
-    # Only check known locations if auto-detection failed
     elif latitude is None or longitude is None:
         known_lat, known_lon, known_desc = get_known_location(location_name)
         if known_lat and known_lon:
@@ -592,19 +695,15 @@ def collect_wifi_data(location_name=None, latitude=None, longitude=None, samples
             if note is None and known_desc:
                 note = f"Known location: {known_desc}"
     
-    # Get wifi data
     wifi_networks = get_wifi_networks(samples=samples)
     
-    # Load existing data
     data = load_existing_data()
     
-    # Use location name from command line or generate one based on current time
     if not location_name:
         current_time = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
         location_name = f"Location_Scan_{current_time}"
         print(f"Using auto-generated location name: {location_name}")
     
-    # If coordinates are still not determined (both auto-detection and known locations failed)
     if latitude is None:
         try:
             latitude_input = input("Could not determine latitude automatically. Please enter latitude (e.g. 23.2100): ")
@@ -621,15 +720,12 @@ def collect_wifi_data(location_name=None, latitude=None, longitude=None, samples
             print("Invalid longitude, using 0.0")
             longitude = 0.0
     
-    # If no note provided, use an auto-generated one
     if note is None:
         note = f"Automatically collected on {datetime.now().strftime('%Y-%m-%d %H:%M')}"
     
-    # Create a unique location key
     timestamp = datetime.now().isoformat()
     location_key = f"{location_name}_{timestamp}"
     
-    # Add the new data
     data["locations"][location_key] = {
         "name": location_name,
         "latitude": latitude,
@@ -639,10 +735,8 @@ def collect_wifi_data(location_name=None, latitude=None, longitude=None, samples
         "note": note if note else ""
     }
     
-    # Save the updated data
     save_data(data)
     
-    # Print summary
     print(f"\nFound {len(wifi_networks)} WiFi networks at {location_name} ({latitude}, {longitude})")
     for network in wifi_networks:
         signal_quality = "Excellent" if network["signal"] > -65 else \
@@ -653,7 +747,6 @@ def collect_wifi_data(location_name=None, latitude=None, longitude=None, samples
     print(f"\nData saved to {DATA_FILE}")
 
 def parse_arguments():
-    """Parse command line arguments."""
     parser = argparse.ArgumentParser(description='Collect WiFi network data and store in a JSON file.')
     parser.add_argument('--location', '-l', help='Name of the location')
     parser.add_argument('--latitude', '-lat', type=float, help='Latitude in decimal degrees')
@@ -672,6 +765,10 @@ def main():
                       help='Total collection duration in seconds (default: infinite)')
     parser.add_argument('--output', '-o',
                       help='Output JSON file (default: dynamic_data.json)')
+    parser.add_argument('--no-web', action='store_true',
+                      help='Disable web interface')
+    parser.add_argument('--port', '-p', type=int, default=5000,
+                      help='Port for web interface (default: 5000)')
     args = parser.parse_args()
 
     global DATA_FILE
@@ -685,7 +782,14 @@ def main():
         print(f"Duration: {args.duration} seconds")
     else:
         print("Duration: infinite (Ctrl+C to stop)")
-
+    
+    if not args.no_web:
+        try:
+            start_webapp(port=args.port)
+        except Exception as e:
+            print(f"Error starting web interface: {e}")
+            print("Continuing with data collection only...")
+    
     dynamic_wifi_collection(
         interval=args.interval,
         duration=args.duration
