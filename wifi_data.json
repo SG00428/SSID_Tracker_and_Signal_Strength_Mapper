@@ -10150,10 +10150,49 @@
         }
       ],
       "note": ""
+    },
+    "10/201 classroom_2025-04-11T10:41:00.352729": {
+      "name": "10/201 classroom",
+      "latitude": 23.215889741780103,
+      "longitude": 72.68657710400296,
+      "timestamp": "2025-04-11T10:41:00.352729",
+      "networks": [
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -80,
+          "signal_percent": 39,
+          "auth": "Open",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 15,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -80,
+          "signal_percent": 39,
+          "auth": "WPA2-Enterprise",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 15,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -80,
+          "signal_percent": 39,
+          "auth": "WPA2-Enterprise",
+          "channel": 6,
+          "noise_floor": -95,
+          "snr": 15,
+          "samples": 3
+        }
+      ],
+      "note": "Auto-detected location: Browser-based geolocation"
     }
   },
   "metadata": {
-    "last_updated": "2025-04-10T20:24:16.732754",
+    "last_updated": "2025-04-11T10:41:00.352729",
     "version": "1.1",
     "created": "2025-04-10T20:24:16.735876"
   },
