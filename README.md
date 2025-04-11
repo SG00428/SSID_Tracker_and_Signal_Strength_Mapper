@@ -1,139 +1,88 @@
+# WiFi Signal Strength Mapper
 
-# 📶 SSID Tracker & WiFi Signal Strength Mapper 
+A modular and interactive web-based application to map, analyze, and monitor Wi-Fi signal strengths across geographic locations. Built using Python and modern web technologies, this tool is designed to assist users in visualizing wireless network coverage and analyzing network performance.
 
-A cross-platform project that scans available WiFi networks, maps their signal strength across locations within the **IIT Gandhinagar campus**, and provides an interactive heatmap and SSID details via a web interface. It supports both static and dynamic data collection modes.
+---
+
+## Project Overview
+
+This application collects and visualizes data about nearby Wi-Fi networks, including:
+- Signal strengths
+- Authentication types
+- Channel information
+- Network names (SSIDs)
+
+It displays this information on an interactive web map, helping users identify coverage gaps, signal quality variations, and optimal connection zones.
+
+---
+
+## Files and Directory Structure
+
+├── dynamic.py # Main server script for scanning and visualization ├── wifi_data.json # Persistent storage for collected Wi-Fi data ├── dynamic_data.json # Temporary cache for real-time scanning ├── templates/ │ └── map.html # HTML interface with interactive map
+
+---
+
+## ✨ Features
+
+- **Real-time Wi-Fi network scanning**
+- **Interactive Leaflet.js map visualization**
+- **Signal strength heatmaps**
+- **Detailed network info display**
+- **Historical data tracking**
+- **Support for multiple authentication types**
+- **Signal quality analysis with Chart.js**
+- **Exportable JSON data**
 
 ---
 
 ## Requirements
 
-Ensure you have the required Python packages installed:
+- Python 3.7+
+- A modern web browser with JavaScript enabled
+
+## Installation & Running
+
+### Step 1: Clone the repository
 
 ```bash
-pip install -r requirements.txt
-```
+- git clone https://github.com/your-username/wifi-signal-mapper.git
+- cd wifi-signal-mapper
+- Step 2: Install dependencies
+- pip install flask geopy scapy wifi
+- Step 3: Run the server
+- python dynamic.py
+- Step 4: Open in your browser
+- Navigate to:
+- http://127.0.0.1:5000
 
-You may also need to run the script with administrator/root privileges depending on your platform, especially for WiFi scanning.
+---
 
-Project Overview
-This project enables:
+Usage Instructions
+The map will load showing any previously recorded scan data.
 
-Campus-wide WiFi signal strength mapping using heatmaps
+Click anywhere on the map to perform a Wi-Fi scan at that location.
 
-SSID tracking with security type, signal strength, and channel info
+Use the "Show Signal Heatmap" checkbox to enable signal strength visualization.
 
-Location-specific insights via an interactive web UI
+Click on individual networks in the list to view detailed network information.
 
-Dynamic and static data collection capabilities
+Use the download/export buttons to save scan data in JSON format for further analysis.
 
-⚙️ How to Run
-Run Static Web App
-bash
-Copy
-Edit
-python static_app.py
-Opens a local web server that uses the static dataset from wifi_data.json.
+---
 
-Run Dynamic Web App with Live WiFi Scanning
-Step 1: Start scanning every 10 seconds:
+Technical Stack
+Backend: Flask (Python)
 
-bash
-Copy
-Edit
-python dynamic.py --interval 10
-Step 2: Run the dynamic web app:
+Frontend: HTML, CSS, JavaScript
 
-bash
-Copy
-Edit
-python app.py
-This will launch a live dashboard that updates with new scans at runtime.
+Visualization: Leaflet.js, Chart.js
 
-Methodology & Implementation
-WiFi Scanning
-Uses platform-specific commands to scan WiFi networks and extract:
+Geolocation: Browser Geolocation API
 
-SSID (network name)
+Data Storage: JSON files
 
-Signal strength in %, converted to dBm using:
+---
 
-python
-Copy
-Edit
-signal_dbm = (signal_percent / 2) - 100
-SNR (Signal-to-Noise Ratio), calculated as:
+License
+This project is open-source and available under the MIT License.
 
-python
-Copy
-Edit
-SNR = signal_dbm - noise_floor
-A noise_floor of -95 dBm is assumed as baseline ambient noise. It helps normalize signal quality and derive more meaningful SNR values.
-
-Also captures:
-
-Channel
-
-Authentication type (e.g., WPA2, Open)
-
-Geolocation & Mapping
-Each scan result is tied to a manually/geotagged campus coordinate.
-
-Uses Leaflet.js for:
-
-Campus boundary overlay
-
-Heatmaps of signal strength
-
-SSID metadata on-click popups
-
-Implements a nearest-point algorithm to:
-
-Determine the closest WiFi data point to a user click on the map
-
-Provide detailed info for that location
-
-Uses spatial interpolation to estimate signal strengths in regions without direct measurements
-
-Features Implemented
-A. Interactive Map Interface
-Campus boundary visualization
-
-📍 94 Data Collection Points
-
-Color-coded Signal Strengths:
-
-🟢 Excellent
-
-🟡 Good
-
-🟠 Fair
-
-🔴 Poor
-
-Location-Specific WiFi Details: Clicking on a location displays nearby network info
-
-B. Data Analysis
-Downloadable WiFi Data for offline use
-
-Signal Strength Heatmap
-
-Network Filtering (e.g., view only IITGN-SSO or eduroam)
-
-Signal Categories:
-
-Excellent: -30 to -65 dBm
-
-Good: -65 to -75 dBm
-
-Fair: -75 to -85 dBm
-
-Poor: -85 to -100 dBm
-
-C. Technical Highlights
-Nearest Point Algorithm
-
-Spatial Interpolation
-
-Progressive Enhancement (Supports continuous data addition)
-
-Responsive Design for desktop and mobile
