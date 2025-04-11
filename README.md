@@ -16,12 +16,6 @@ It displays this information on an interactive web map, helping users identify c
 
 ---
 
-## Files and Directory Structure
-
-├── dynamic.py # Main server script for scanning and visualization ├── wifi_data.json # Persistent storage for collected Wi-Fi data ├── dynamic_data.json # Temporary cache for real-time scanning ├── templates/ │ └── map.html # HTML interface with interactive map
-
----
-
 ## ✨ Features
 
 - **Real-time Wi-Fi network scanning**
@@ -87,8 +81,4 @@ Geolocation: Browser Geolocation API
 
 Data Storage: JSON files
 
----
-
-## License
-This project is open-source and available under the MIT License.
 
