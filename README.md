@@ -42,11 +42,12 @@ It displays this information on an interactive web map, helping users identify c
 
 ## Installation & Running
 
-## Step 1: Clone the repository
+Step 1: Clone the repository
 
 ```bash
 - git clone https://github.com/your-username/wifi-signal-mapper.git
 - cd wifi-signal-mapper
+```
 - Step 2: Install dependencies
 - pip install flask geopy scapy wifi
 - Step 3: Run the server
