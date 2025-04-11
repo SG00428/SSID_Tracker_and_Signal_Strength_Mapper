@@ -16,7 +16,7 @@ It displays this information on an interactive web map, helping users identify c
 
 ---
 
-## ✨ Features
+## Features
 
 - **Real-time Wi-Fi network scanning**
 - **Interactive Leaflet.js map visualization**
@@ -67,6 +67,8 @@ Use the "Show Signal Heatmap" checkbox to enable signal strength visualization.
 Click on individual networks in the list to view detailed network information.
 
 Use the download/export buttons to save scan data in JSON format for further analysis.
+
+The server provides HTTP endpoints for API requests, which you can see in the terminal as they're received.
 
 ---
 
