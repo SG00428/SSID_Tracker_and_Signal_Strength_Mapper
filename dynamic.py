@@ -21,7 +21,7 @@ from flask import Flask, render_template, request, jsonify
 # File where data will be stored
 DATA_FILE = 'dynamic_data.json'
 
-# Distance threshold in degrees (~10 meters)
+# Distance threshold in degrees 
 LOCATION_THRESHOLD = 0.0001
 
 # Flask app
@@ -32,7 +32,7 @@ def start_webapp(host='0.0.0.0', port=5000, debug=False, use_reloader=False):
     """Start the Flask web application in a separate thread"""
     global app
     
-    # Initialize Flask app if not already done
+    # Initializing the Flask app if not already done
     if app is None:
         app = Flask(__name__)
         
@@ -147,7 +147,7 @@ def start_webapp(host='0.0.0.0', port=5000, debug=False, use_reloader=False):
     print(f"\nWeb interface started at http://{host}:{port}")
     print("Open this URL in your browser to view WiFi data on a map")
     
-    # Try to open the browser automatically
+    # Opening the browser automatically
     try:
         webbrowser.open(f"http://127.0.0.1:{port}")
     except:
@@ -169,7 +169,7 @@ def find_nearest_location(target_lat, target_lon, max_distance=0.001):
         # Calculate distance
         dist = calculate_distance(lat, lon, target_lat, target_lon)
         
-        if dist < min_dist and dist < 100:  # Max 100 meters
+        if dist < min_dist and dist < 150:  # Max 150 meters
             min_dist = dist
             nearest = {
                 "key": location_key,
@@ -197,7 +197,6 @@ def dynamic_wifi_collection(interval=10, duration=None, stop_event=None):
     """
     Continuously collect WiFi data with specified interval
     Overwrites data for same location, appends for new locations
-    
     Args:
         interval: Time between scans in seconds
         duration: Total collection time in seconds (None for infinite)
@@ -212,7 +211,7 @@ def dynamic_wifi_collection(interval=10, duration=None, stop_event=None):
     scan_count = 0
     
     # Distance threshold in meters - locations closer than this are considered the same
-    location_distance_threshold = 0.5  # 10 meters threshold
+    location_distance_threshold = 0.5 
 
     try:
         while True:
