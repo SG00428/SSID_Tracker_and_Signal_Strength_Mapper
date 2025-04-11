@@ -11,7 +11,7 @@ from datetime import datetime
 app = Flask(__name__)
 
 # File to store WiFi data persistently
-DATA_FILE = 'wifi_data.json'
+DATA_FILE = 'dynamic_data.json'
 
 # Store WiFi data by location
 wifi_locations = {}
