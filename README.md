@@ -11,6 +11,8 @@ Ensure you have the required Python packages installed:
 
 ```bash
 pip install -r requirements.txt
+```
+
 You may also need to run the script with administrator/root privileges depending on your platform, especially for WiFi scanning.
 
 Project Overview
