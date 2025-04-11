@@ -48,17 +48,22 @@ Step 1: Clone the repository
 - git clone https://github.com/your-username/wifi-signal-mapper.git
 - cd wifi-signal-mapper
 ```
-- Step 2: Install dependencies
+Step 2: Install dependencies
+```bash
 - pip install flask geopy scapy wifi
-- Step 3: Run the server
+```
+Step 3: Run the server
+```bash
 - python dynamic.py
-- Step 4: Open in your browser
+```
+Step 4: Open in your browser
+```bash
 - Navigate to:
 - http://127.0.0.1:5000
-
+```
 ---
 
-Usage Instructions
+## Usage Instructions
 The map will load showing any previously recorded scan data.
 
 Click anywhere on the map to perform a Wi-Fi scan at that location.
@@ -71,7 +76,7 @@ Use the download/export buttons to save scan data in JSON format for further ana
 
 ---
 
-Technical Stack
+## Technical Stack
 Backend: Flask (Python)
 
 Frontend: HTML, CSS, JavaScript
@@ -84,6 +89,6 @@ Data Storage: JSON files
 
 ---
 
-License
+## License
 This project is open-source and available under the MIT License.
 
