@@ -42,7 +42,7 @@ It displays this information on an interactive web map, helping users identify c
 
 ## Installation & Running
 
-### Step 1: Clone the repository
+## Step 1: Clone the repository
 
 ```bash
 - git clone https://github.com/your-username/wifi-signal-mapper.git
