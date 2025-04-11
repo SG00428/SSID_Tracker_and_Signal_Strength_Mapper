@@ -10189,12 +10189,52 @@
         }
       ],
       "note": "Auto-detected location: Browser-based geolocation"
+    },
+    "Location_23.211121_72.685457": {
+      "name": "Dynamic_Scan_2025-04-11T20:02:22.224680",
+      "latitude": 23.2111208,
+      "longitude": 72.6854568,
+      "timestamp": "2025-04-11T20:21:32.290129",
+      "networks": [
+        {
+          "ssid": "IITGN-GUEST",
+          "signal": -62,
+          "signal_percent": 75,
+          "auth": "Open",
+          "channel": 1,
+          "noise_floor": -95,
+          "snr": 33,
+          "samples": 3
+        },
+        {
+          "ssid": "eduroam",
+          "signal": -83,
+          "signal_percent": 33,
+          "auth": "WPA2-Enterprise",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 12,
+          "samples": 3
+        },
+        {
+          "ssid": "IITGN-SSO",
+          "signal": -83,
+          "signal_percent": 33,
+          "auth": "WPA2-Enterprise",
+          "channel": 11,
+          "noise_floor": -95,
+          "snr": 12,
+          "samples": 3
+        }
+      ],
+      "note": "Updated from dynamic scan on 2025-04-11 20:21:35"
     }
   },
   "metadata": {
-    "last_updated": "2025-04-11T10:41:00.352729",
+    "last_updated": "2025-04-11T20:21:35.177391",
     "version": "1.1",
-    "created": "2025-04-10T20:24:16.735876"
+    "created": "2025-04-10T20:24:16.735876",
+    "location_count": 188
   },
   "signal_history": {}
 }

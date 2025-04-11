@@ -282,7 +282,9 @@ def dynamic_wifi_collection(interval=10, duration=None, stop_event=None):
 
     except KeyboardInterrupt:
         print("\nDynamic collection stopped by user")
-    
+    finally:
+        # Always run cleanup when scanning stops (whether by KeyboardInterrupt or duration)
+        cleanup_and_transfer_data()
     print(f"\nCollection completed: {scan_count} scans performed")
     return scan_count
 
@@ -745,6 +747,102 @@ def collect_wifi_data(location_name=None, latitude=None, longitude=None, samples
         print(f"  {network['ssid']}: {network['signal']} dBm ({signal_quality})")
     
     print(f"\nData saved to {DATA_FILE}")
+
+def cleanup_and_transfer_data():
+    """
+    Transfer data from dynamic_data.json to wifi_data.json when scanning stops
+    - Updates existing locations or adds new ones
+    - Clears dynamic_data.json afterward
+    """
+    print("\nTransferring collected data to permanent storage...")
+    
+    # Load data from both files
+    try:
+        # Load dynamic data (temporary)
+        with open('dynamic_data.json', 'r') as file:
+            dynamic_data = json.load(file)
+        
+        # Load wifi data (permanent)
+        wifi_data = {}
+        if os.path.exists('wifi_data.json'):
+            with open('wifi_data.json', 'r') as file:
+                wifi_data = json.load(file)
+        else:
+            # Initialize with empty structure if file doesn't exist
+            wifi_data = {
+                "locations": {},
+                "metadata": {
+                    "created": datetime.now().isoformat(),
+                    "last_updated": datetime.now().isoformat()
+                }
+            }
+        
+        # Transfer locations from dynamic to permanent storage
+        locations_added = 0
+        locations_updated = 0
+        
+        for loc_key, loc_data in dynamic_data.get("locations", {}).items():
+            # Check if this location exists in permanent storage
+            lat = loc_data.get("latitude")
+            lon = loc_data.get("longitude")
+            
+            if not lat or not lon:
+                continue
+                
+            # Look for matching location
+            location_exists = False
+            for wifi_key, wifi_loc in wifi_data["locations"].items():
+                wifi_lat = wifi_loc.get("latitude")
+                wifi_lon = wifi_loc.get("longitude")
+                
+                if not wifi_lat or not wifi_lon:
+                    continue
+                    
+                # Calculate distance between locations
+                dist = calculate_distance(lat, lon, wifi_lat, wifi_lon)
+                
+                # If the locations are close enough, update the existing entry
+                if dist < 10:  # 10 meters threshold for considering same location
+                    # Update existing location with new data
+                    wifi_data["locations"][wifi_key]["networks"] = loc_data["networks"]
+                    wifi_data["locations"][wifi_key]["timestamp"] = loc_data["timestamp"]
+                    wifi_data["locations"][wifi_key]["note"] = f"Updated from dynamic scan on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+                    location_exists = True
+                    locations_updated += 1
+                    break
+            
+            # If no matching location found, add as new
+            if not location_exists:
+                # Generate a permanent key (without the temporary timestamp)
+                new_key = f"Location_{lat:.6f}_{lon:.6f}"
+                wifi_data["locations"][new_key] = loc_data
+                locations_added += 1
+        
+        # Update metadata
+        wifi_data["metadata"]["last_updated"] = datetime.now().isoformat()
+        wifi_data["metadata"]["location_count"] = len(wifi_data["locations"])
+        
+        # Save updated permanent data
+        with open('wifi_data.json', 'w') as file:
+            json.dump(wifi_data, file, indent=2)
+        
+        # Clear dynamic data by creating a fresh file with empty structure
+        empty_data = {
+            "locations": {},
+            "metadata": {
+                "created": datetime.now().isoformat(),
+                "last_updated": datetime.now().isoformat()
+            }
+        }
+        with open('dynamic_data.json', 'w') as file:
+            json.dump(empty_data, file, indent=2)
+        
+        print(f"Data transfer complete: {locations_updated} locations updated, {locations_added} new locations added")
+        print(f"Total locations in permanent storage: {len(wifi_data['locations'])}")
+        print(f"Dynamic data cleared")
+        
+    except Exception as e:
+        print(f"Error during data transfer: {e}")
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description='Collect WiFi network data and store in a JSON file.')
